@@ -1,0 +1,31 @@
+<WaNoTemplate>
+    <WaNoMeta>
+ 		<Author>
+  			<Name> Celso R. C. Rego </Name>
+  			<Email>celsorego@kit.edu</Email>
+ 		</Author>
+
+		<Description>
+			This WaNo performs ...
+ 		</Description>
+
+ 		<Keyword>Some nice words</Keyword>
+	</WaNoMeta>
+
+    <WaNoRoot name="TemplateWaNo">
+        Load the input files from a given folder
+        Define a set of parameters
+    </WaNoRoot>
+
+    <WaNoExecCommand>
+        Run the simulation
+    </WaNoExecCommand>
+    
+    <WaNoInputFiles>
+        Name of the mandatory files, e.g., scripts. 
+    </WaNoInputFiles>
+
+    <WaNoOutputFiles>
+        Define the expected output files
+    </WaNoOutputFiles>
+</WaNoTemplate>

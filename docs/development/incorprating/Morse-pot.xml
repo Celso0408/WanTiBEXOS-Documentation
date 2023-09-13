@@ -1,0 +1,38 @@
+<WaNoTemplate>
+    
+    <WaNoMeta>
+ 		<Author>
+  			<Name> Celso R. C. Rego </Name>
+  			<Email>celsorego@kit.edu</Email>
+ 		</Author>
+
+		<Description>
+   			This WaNo perform a plot of Morse potential for H2 molecule.
+ 		</Description>
+
+ 		<Keyword>Morse-pot</Keyword>
+	</WaNoMeta>
+	
+	<WaNoRoot name="MORSE-pot">
+
+	<WaNoFloat name="De (Ry)" description = "The well depth (defined relative to the dissociated atoms)">0.48</WaNoFloat>
+	<WaNoFloat name="a" description = "Controls the width of the potential (the smaller a is, the larger the well)" >1.8</WaNoFloat>
+	<WaNoFloat name="re (A)" description = "The equilibrium bond distance">0.8</WaNoFloat>
+	<WaNoFloat name="Mol_distance (A)" description = "Distance between the atoms" >1.0</WaNoFloat>
+	
+	</WaNoRoot>
+	
+	<WaNoExecCommand>
+		export NANOVER=V4
+		source $NANOMATCH/$NANOVER/configs/simstack_kit.config
+		python morse.py
+	</WaNoExecCommand>
+	
+	<WaNoInputFiles>
+		<WaNoInputFile logical_filename="morse.py">morse.py</WaNoInputFile>
+	</WaNoInputFiles>
+
+	<WaNoOutputFiles>
+		<WaNoOutputFile>MOROUT.yml</WaNoOutputFile>
+	</WaNoOutputFiles>
+</WaNoTemplate>

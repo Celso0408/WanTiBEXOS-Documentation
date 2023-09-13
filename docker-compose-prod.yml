@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  sphinx:
+    build:
+      context: ./
+      args:
+         - BRANCH=devel
+    volumes:
+      - html_data:/simstack/docs/_build
+    command: "/bin/bash -c 'while :; do sleep 1m; git fetch --quiet; git diff-index --quiet origin/devel || ( git pull && make html ); done'"
+
+volumes:
+  html_data:

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamiltonian &mdash; WanTiBEXOS  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="License" href="../references/license/index.html" />
+    <link rel="prev" title="Input Files" href="../installation/inputs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            WanTiBEXOS
+              <img src="../_static/WantBx.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation &amp; Inputs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/inputs.html">Input Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/inputs.html#executable-files">Executable files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/inputs.html#wantibexos-flags">WanTiBEXOS Flags</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Formalism</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hamiltonian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#optical-properties">Optical properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#berry-curvature">Berry Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#bethe-salpeter-formalism">Bethe–Salpeter Formalism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#finite-temperature-bse-approach">Finite temperature BSE approach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#coulomb-potentials">Coulomb Potentials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bare-coulomb-potential-v3d">Bare Coulomb Potential (V3D)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#d-keldysh-potential-v2dk">2D Keldysh Potential(V2DK)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#d-rytova-keldysh-potential-v2drk">2D Rytova–Keldysh Potential (V2DRK)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#d-truncated-coulomb-potential-v2dt">2D truncated Coulomb Potential (V2DT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#d-truncated-simplified-coulomb-potential-v2dt2">2D truncated simplified Coulomb Potential (V2DT2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#d-ohno-potential-v2doh">2D Ohno Potential (V2DOH)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#d-potential-v0dt">0D Potential (V0DT)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#exciton-radiative-lifetime">Exciton radiative lifetime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#k-mesh-generator">k-mesh generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#solar-cell-power-conversion-efficiency">Solar Cell Power Conversion Efficiency</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#shockley-queisser-limit">Shockley–Queisser Limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spectroscopy-limited-maximum-efficiency">Spectroscopy Limited Maximum Efficiency</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#references">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/license/index.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/citing/index.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/dev_team/index.html">Development Team</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">WanTiBEXOS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Hamiltonian</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/theoretical_background/formalism.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hamiltonian">
+<h1>Hamiltonian<a class="headerlink" href="#hamiltonian" title="Link to this heading"></a></h1>
+<style> .red {color: red !important} </style>
+<style> .green {color: green !important} </style><p>The orthogonal tight-binding Hamiltonian, <span class="math notranslate nohighlight">\(H(\mathbf{k})\)</span>, obtained via the Wannier90 framework <span id="id1">[Arash2008]</span> can be
+written as follows,</p>
+<div class="math notranslate nohighlight" id="equation-eq-hamiltonian">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-hamiltonian" title="Link to this equation"></a></span>\[\begin{equation}
+     H(\mathbf{k}) = H_{0}+ \sum_{i=1}^{N} e^{i \mathbf{k} \cdot \mathbf{R_{i}}} H_{\mathbf{R_{i}}}~,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(H_{0}\)</span> corresponds to the Hamiltonian in unit cell, which contains the on-site energies
+and hopping parameters inside the cell. <span class="math notranslate nohighlight">\(H_{\mathbf{R_{i}}}\)</span> corresponds to the hopping matrices,
+representing the interaction between unit cell and neighbors cells, while the matrix elements
+of <span class="math notranslate nohighlight">\(H_{0}\)</span> and <span class="math notranslate nohighlight">\(H_{\mathbf{R_{i}}}\)</span> are the output from the Wannier90 package [Wannier90] and
+the number of neighbors cell proportional to the <span class="math notranslate nohighlight">\(\textbf{k}-mesh\)</span> used for Wannier interpolation. In our
+code the values of <span class="math notranslate nohighlight">\(H_{0}\)</span> and <span class="math notranslate nohighlight">\(H_{\mathbf{R_{i}}}\)</span> are declared in the <span class="math notranslate nohighlight">\(\texttt{PARAMS\_FILE}\)</span>.</p>
+<p>The electronic energy levels are obtained as the following:</p>
+<div class="math notranslate nohighlight" id="equation-eq-eigenvalues">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-eigenvalues" title="Link to this equation"></a></span>\[\begin{equation}
+    H(\mathbf{k}) |n,\mathbf{k} \rangle = E_{n,\mathbf{k}} |n,\mathbf{k} \rangle
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(E_{n,\mathbf{k}}\)</span> and <span class="math notranslate nohighlight">\(|n,\mathbf{k} \rangle\)</span> are the eigenvalues and eigenvectors respectively, <span class="math notranslate nohighlight">\(n\)</span>
+corresponds to the band index, that could be addressed as <span class="math notranslate nohighlight">\(v\)</span> for the valence (occupied) states and <span class="math notranslate nohighlight">\(c\)</span>
+for the conduction (unoccupied) states, <span class="math notranslate nohighlight">\(\mathbf{k}\)</span> are the <span class="math notranslate nohighlight">\(\textbf{k}-point\)</span> in Brillouin zone.</p>
+</section>
+<section id="optical-properties">
+<h1>Optical properties<a class="headerlink" href="#optical-properties" title="Link to this heading"></a></h1>
+<p>To obtain the optical properties, we calculated the real and imaginary parts of the frequency dependent
+dielectric tensor, <span class="math notranslate nohighlight">\(\epsilon_{1,\alpha,\beta}(\omega)\)</span> and  <span class="math notranslate nohighlight">\(\epsilon_{2,\alpha,\beta}(\omega)\)</span>,
+respectively, through the following expressions:</p>
+<div class="math notranslate nohighlight" id="equation-eq-dielectric-tensor">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-dielectric-tensor" title="Link to this equation"></a></span>\[\begin{align}
+     \epsilon_{1,\alpha,\beta}(\omega) =  \delta_{\alpha,\beta} +  \frac{e^{2} S_{p}}{\epsilon_{0}\Omega N_{\mathbf{k}}} \sum_{\mathbf{k},c,v} F_{\alpha,\beta}^{c,v,\mathbf{k}} \frac{(E_{c,\mathbf{k}}-E_{v,\mathbf{k}})-\hbar \omega}{\left(\hbar \omega - (E_{c,\mathbf{k}}-E_{v,\mathbf{k}})\right)^{2}+\eta^{2}}~,
+\end{align}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-dielectric-tensor2">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-dielectric-tensor2" title="Link to this equation"></a></span>\[\begin{align}
+   \epsilon_{2,\alpha,\beta}(\omega)=  \frac{ e^{2} S_{p}}{\epsilon_{0}\Omega N_{\mathbf{k}}} \sum_{\mathbf{k},c,v}  F_{\alpha,\beta}^{c,v,\mathbf{k}}   \frac{\eta}{\left(\hbar \omega - (E_{c,\mathbf{k}}-E_{v,\mathbf{k}})\right)^{2}+\eta^{2}}~,
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta_{\alpha,\beta}\)</span> is a delta kroenecker, <span class="math notranslate nohighlight">\(S_{p}\)</span> is the spin factor, being <span class="math notranslate nohighlight">\(1\)</span> for
+SOC and spin polarized calculations and <span class="math notranslate nohighlight">\(2\)</span> for non-polarized calculations, <span class="math notranslate nohighlight">\(F_{\alpha,\beta}^{c,v,\mathbf{k}}\)</span>,
+in the scope of independent particle approximation (IPA), corresponds to the oscillator force, defined by:</p>
+<div class="math notranslate nohighlight" id="equation-eq-oscillator-force">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-oscillator-force" title="Link to this equation"></a></span>\[\begin{equation}
+    F_{\alpha,\beta}^{c,v,\mathbf{k}} =  \frac{\langle c,\mathbf{k} |P_{\alpha}|v,\mathbf{k} \rangle \langle v,\mathbf{k} |P_{\beta}|c,\mathbf{k} \rangle}{\left(E_{c,\mathbf{k}}-E_{v,\mathbf{k}}-i\eta_{1}\right) \left(E_{c,\mathbf{k}}-E_{v,\mathbf{k}}+i\eta_{1}\right)}~,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Omega\)</span> is the volume of unit cell, <span class="math notranslate nohighlight">\(\epsilon_{0}\)</span> is the vacuum permittivity constant, <span class="math notranslate nohighlight">\(N_{\mathbf{k}}\)</span>
+is the number of <span class="math notranslate nohighlight">\(\textbf{k}-points\)</span> employed for the BZ integration, <span class="math notranslate nohighlight">\(\omega\)</span> is the incident photon frequency,
+<span class="math notranslate nohighlight">\(c(v)\)</span> corresponds to the conduction(valence) states. <span class="math notranslate nohighlight">\(\eta\)</span> is a parameter to smooth the dielectric function,
+where <span class="math notranslate nohighlight">\(\eta= \eta_{1}+\eta_{2}\)</span>, being <span class="math notranslate nohighlight">\(\eta_{1}\)</span> defined by the input flag <span class="math notranslate nohighlight">\(\texttt{CSHIFT}\)</span> and <span class="math notranslate nohighlight">\(\eta_{2}\)</span>
+automatically defined by the code through the separation energy between the transition states. <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>
+corresponds to the components <span class="math notranslate nohighlight">\(x, y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> in the dielectric tensor. <span class="math notranslate nohighlight">\(P_{\alpha}\)</span> corresponds to the
+light-matter interaction operator, which is given by,</p>
+<div class="math notranslate nohighlight" id="equation-eq-light-matter">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-light-matter" title="Link to this equation"></a></span>\[\begin{equation}
+    P_{\alpha} = \frac{\partial H(\mathbf{k})}{\partial k_{\alpha}}~,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(H(\mathbf{k})\)</span> corresponds to the electronic Hamiltonian, and  <span class="math notranslate nohighlight">\(\alpha=`{:math:`x,y,z\)</span>}. For circularly
+polarized light, selected by the flag <span class="math notranslate nohighlight">\(\texttt{CPOL= T}\)</span>, the light-matter interaction operator for <span class="math notranslate nohighlight">\(\sigma_{\pm}\)</span>
+are written by the following expression:</p>
+<div class="math notranslate nohighlight" id="equation-eq-light-matter-cpol">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-light-matter-cpol" title="Link to this equation"></a></span>\[\begin{equation}
+    P_{\sigma_{\pm}} = \frac{1}{\sqrt{2}} \left( \frac{\partial H(\mathbf{k})}{\partial k_{x}}\pm i\frac{\partial H(\mathbf{k})}{\partial k_{y}}\right)~.
+\end{equation}\]</div>
+<p>It’s well known the relation between the complex dielectric constant <span class="math notranslate nohighlight">\(\epsilon(\omega)\)</span> and the complex refractive
+index <span class="math notranslate nohighlight">\(\tilde{n}(\omega)=n(\omega)+i\kappa(\omega)\)</span>, where <span class="math notranslate nohighlight">\(n(\omega)\)</span> is the refractive index and
+<span class="math notranslate nohighlight">\(\kappa(\omega)\)</span> the extinction coefficient. They are related by:</p>
+<div class="math notranslate nohighlight" id="equation-eq-refractive-index">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq-refractive-index" title="Link to this equation"></a></span>\[\begin{equation}
+    \epsilon(\omega) =\tilde{n}^{2}(\omega)~,
+\end{equation}\]</div>
+<p>separating <span class="math notranslate nohighlight">\(\epsilon(\omega)\)</span> in real and imaginary part, <span class="math notranslate nohighlight">\(\tilde{n}(\omega)\)</span> in refractive index and extinction
+coefficient we have:</p>
+<div class="math notranslate nohighlight" id="equation-eq-refractive-index2">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-refractive-index2" title="Link to this equation"></a></span>\[\begin{equation}
+    \epsilon_{1,\alpha,\beta}(\omega)+i\epsilon_{2,\alpha,\beta}(\omega) = n_{\alpha,\beta}^{2}(\omega) + 2 in_{\alpha,\beta}(\omega)\kappa(\omega)-\kappa_{\alpha,\beta}^{2}(\omega)~.
+\end{equation}\]</div>
+<p>Then, we obtain the real and imaginary part of dielectric function, i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq-refractive-index3">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq-refractive-index3" title="Link to this equation"></a></span>\[\begin{equation}
+    \epsilon_{1,\alpha,\beta}(\omega)= n_{\alpha,\beta}^{2}(\omega) - \kappa_{\alpha,\beta}^{2}(\omega)~,
+\end{equation}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-refractive-index4">
+<span class="eqno">(11)<a class="headerlink" href="#equation-eq-refractive-index4" title="Link to this equation"></a></span>\[\begin{equation}
+    \epsilon_{2,\alpha,\beta}(\omega)= 2 n_{\alpha,\beta}(\omega)\kappa_{\alpha,\beta}(\omega)~.
+\end{equation}\]</div>
+<p>From these two equations we derive the expressions of the extinction coefficient and of the refractive index, as follows,</p>
+<div class="math notranslate nohighlight" id="equation-eq-extinction-coefficient">
+<span class="eqno">(12)<a class="headerlink" href="#equation-eq-extinction-coefficient" title="Link to this equation"></a></span>\[\begin{equation}
+    \kappa_{\alpha,\beta}(\omega)= \left[\frac{\sqrt{\epsilon_{1,\alpha,\beta}^{2}(\omega)+\epsilon_{2,\alpha,\beta}^{2}(\omega)}-\epsilon_{1,\alpha,\beta}(\omega)}{2}\right]^{\frac{1}{2}}
+\end{equation}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-refractive-index5">
+<span class="eqno">(13)<a class="headerlink" href="#equation-eq-refractive-index5" title="Link to this equation"></a></span>\[\begin{equation}
+    n_{\alpha,\beta}(\omega) = \left[\frac{\sqrt{\epsilon_{1,\alpha,\beta}^{2}(\omega)+\epsilon_{2,\alpha,\beta}^{2}(\omega)}+\epsilon_{1,\alpha,\beta}(\omega)}{2}\right]^{\frac{1}{2}}~.
+\end{equation}\]</div>
+<p>The absorption coefficient <span class="math notranslate nohighlight">\(A_{\alpha,\beta}(\omega)\)</span> is defined as:</p>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is the light speed. The reflectivity <span class="math notranslate nohighlight">\(R_{\alpha,\beta}(\omega)\)</span> is defined by the refractive index and
+extinction coefficient by the following expression:</p>
+<div class="math notranslate nohighlight" id="equation-eq-reflectivity">
+<span class="eqno">(14)<a class="headerlink" href="#equation-eq-reflectivity" title="Link to this equation"></a></span>\[\begin{equation}
+    R_{\alpha,\beta}(\omega) = \frac{(n_{\alpha,\beta}(\omega)-1)^{2}+\kappa_{\alpha,\beta}^{2}(\omega)}{(n_{\alpha,\beta}(\omega)+1)^{2}+\kappa_{\alpha,\beta}^{2}(\omega)}~.
+\end{equation}\]</div>
+<p>The energy loss function <span class="math notranslate nohighlight">\(L_{\alpha,\beta}(\omega)\)</span> is defined as:</p>
+<div class="math notranslate nohighlight" id="equation-eq-energy-loss-function">
+<span class="eqno">(15)<a class="headerlink" href="#equation-eq-energy-loss-function" title="Link to this equation"></a></span>\[\begin{equation}
+    L_{\alpha,\beta}(\omega)=\frac{\epsilon_{2,\alpha,\beta}}{\epsilon_{1,\alpha,\beta}^{2}+\epsilon_{2,\alpha,\beta}^{2}}~.
+\end{equation}\]</div>
+</section>
+<section id="berry-curvature">
+<h1>Berry Curvature<a class="headerlink" href="#berry-curvature" title="Link to this heading"></a></h1>
+<p>In solid state physics, the crystal symmetry rules the electronic band structure, as well as the nature  of  Bloch
+states. For the crystal with inversion symmetry, the Berry curvatures of the Bloch states are zero <a class="reference internal" href="#xiao2010" id="id2"><span>[Xiao2010]</span></a>. Nevertheless,
+in crystals with inversion asymmetry such as the <span class="math notranslate nohighlight">\(\ce{MoS2}\)</span> monolayer and the <span class="math notranslate nohighlight">\(\ce{WS2}/\ce{MoS2}\)</span> vdWs
+heterostructure, they are nonzero <a class="reference internal" href="#zhang2011" id="id3"><span>[Zhang2011]</span></a>, <a class="reference internal" href="#kormanyos2018" id="id4"><span>[Kormanyos2018]</span></a> . Moreover, time reversal symmetry requires all
+Berry-phase related physical quantities to be valley-contrasting. To gain further insight into the electronic band
+structure and optical properties of the condensed-matter systems,  let us explore the Berry curvature
+<span class="math notranslate nohighlight">\(\Omega_{n}(\textbf{k})\)</span>, dictated by, <a class="reference internal" href="#cai2013" id="id5"><span>[Cai2013]</span></a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq-berry-curvature">
+<span class="eqno">(16)<a class="headerlink" href="#equation-eq-berry-curvature" title="Link to this equation"></a></span>\[\begin{split}\begin{equation}
+    \begin{split}
+    &amp; \Omega_{\rm n}(\bf k)= i \langle \nabla_{k} u_{n}\vert \times \vert \nabla_{k} u_{n}\rangle~, \\
+    \label{Berry-1}
+    \end{split}
+\end{equation}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vert u_{n} \rangle`is the :math:`n\)</span>-th Bloch state.</p>
+<p>In this code, one can obtain the total Berry curvature (semiconductors only) either along certain
+<span class="math notranslate nohighlight">\(\textbf{k}\)</span>-path <span class="math notranslate nohighlight">\((\texttt{KPATH\_FILE})\)</span>, using the flag <span class="math notranslate nohighlight">\(\texttt{BERRY= T}\)</span>, or the
+whole BZ, using the flag <span class="math notranslate nohighlight">\(\texttt{BERRY\_BZ= T}\)</span>. Total Berry curvature <span class="math notranslate nohighlight">\(\Omega_{\alpha,\beta}(\mathbf{k})\)</span>
+are written by the following expression:</p>
+<div class="math notranslate nohighlight" id="equation-eq-berry-curvature2">
+<span class="eqno">(17)<a class="headerlink" href="#equation-eq-berry-curvature2" title="Link to this equation"></a></span>\[\begin{equation}
+    \Omega_{\alpha,\beta} (\mathbf{k}) = -2 \text{Im} \sum_{v,c} \frac{\langle c,\mathbf{k} |P_{\alpha}|v,\mathbf{k} \rangle \langle v,\mathbf{k} |P_{\beta}|c,\mathbf{k} \rangle}{\left(E_{c,\mathbf{k}}-E_{v,\mathbf{k}}\right)^{2}}~.
+\end{equation}\]</div>
+<p>The code only outputs the non-zero <span class="math notranslate nohighlight">\(\Omega_{\alpha,\beta}(\mathbf{k})\)</span> components: <span class="math notranslate nohighlight">\(\Omega_{x,y}(\mathbf{k})\)</span>,
+<span class="math notranslate nohighlight">\(\Omega_{x,z}(\mathbf{k})\)</span> and <span class="math notranslate nohighlight">\(\Omega_{y,z}(\mathbf{k})\)</span>. More details of Berry curvature calculation in
+the scope of MLWF, can be found in Wang’s work <a class="reference internal" href="#wang2006" id="id6"><span>[Wang2006]</span></a>.</p>
+</section>
+<section id="bethe-salpeter-formalism">
+<h1>Bethe–Salpeter Formalism<a class="headerlink" href="#bethe-salpeter-formalism" title="Link to this heading"></a></h1>
+<p>The Bethe–Salpeter equation (BSE) is a many-body equation that describes the interaction between an electron and a hole. The
+excitonic states are obtained through the solution of the two-particle problem via BSE <a class="reference internal" href="#dias2020" id="id7"><span>[Dias2020]</span></a>, <a class="reference internal" href="#dias2021" id="id8"><span>[Dias2021]</span></a>.
+The excitonic Hamiltonian, <span class="math notranslate nohighlight">\(H_{exc}\)</span>, is composed by the electron, <span class="math notranslate nohighlight">\(H_{e}\)</span>, and hole, <span class="math notranslate nohighlight">\(H_{h}\)</span>,
+single particle Hamiltonians plus Coulomb interaction potential, <span class="math notranslate nohighlight">\(V_{eh}\)</span>, which binds the electron-hole pairs, i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq-excitonic-hamiltonian">
+<span class="eqno">(18)<a class="headerlink" href="#equation-eq-excitonic-hamiltonian" title="Link to this equation"></a></span>\[\begin{equation}
+H_{exc} = H_{e} + H_{h}+V_{eh}~.
+\end{equation}\]</div>
+<p>The excitonic states with momentum center of mass <span class="math notranslate nohighlight">\(\mathbf{Q}\)</span> can be expanded in terms of the product of
+electron and hole pairs wave functions, as follows,</p>
+<div class="math notranslate nohighlight" id="equation-eq-exc-basis">
+<span class="eqno">(19)<a class="headerlink" href="#equation-eq-exc-basis" title="Link to this equation"></a></span>\[\begin{equation}
+\Psi_{ex}^{n}(\mathbf{Q}) = \sum_{c,v,\mathbf{k}} A_{c,v,\mathbf{k},\mathbf{Q}}^{n} \ \left( |c,\mathbf{k}+\mathbf{Q} \rangle \otimes |v,\mathbf{k} \rangle \right)~, \label{eq:Exc_Basis}
+\end{equation}\]</div>
+<p>where the index <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(v\)</span> corresponds to the conduction and valence bands states, with momentum
+<span class="math notranslate nohighlight">\(\mathbf{k}+\mathbf{Q}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{k}\)</span>, respectively. The problem of excitons eigenvalues, can be
+transformed into BSE, <a class="reference internal" href="#salpeter1951" id="id9"><span>[Salpeter1951]</span></a> using the expansion of Equation <a class="reference internal" href="#equation-eq-exc-basis">(19)</a>, it reads,</p>
+<div class="math notranslate nohighlight" id="equation-eq-bse">
+<span class="eqno">(20)<a class="headerlink" href="#equation-eq-bse" title="Link to this equation"></a></span>\[\begin{eqnarray}
+    \left( E_{c,\mathbf{k}+\mathbf{Q}}-E_{v,\mathbf{k}}\right) A_{c,v,\mathbf{k},\mathbf{Q}}^{n}  +  \frac{1}{N_{k}}  \sum_{\mathbf{k'},v',c'} W_{(\mathbf{k},v,c),(\mathbf{k'},v',c'),\mathbf{Q}} \ A_{c',v',\mathbf{k'},\mathbf{Q}}^{n}  = E^{n}_{\mathbf{Q}} A_{c,v,\mathbf{k},\mathbf{Q}}^{n} \label{bse}~,
+\end{eqnarray}\]</div>
+<p>where <span class="math notranslate nohighlight">\(E^{n}_{\mathbf{Q}}\)</span> are the energy of n-th excitonic state with momentum <span class="math notranslate nohighlight">\(\mathbf{Q}\)</span>,
+<span class="math notranslate nohighlight">\(A_{c,v,\mathbf{k},\mathbf{Q}}^{n}\)</span> are the exciton wave function (eigenvector), which are obtained
+by solving Equation <a class="reference internal" href="#equation-eq-bse">(20)</a>. <span class="math notranslate nohighlight">\(E_{c,\mathbf{k} + \mathbf{Q}} - E_{v,\mathbf{k}}\)</span> are the single-particle
+energy difference between a conduction band state <span class="math notranslate nohighlight">\(c\)</span> with momentum <span class="math notranslate nohighlight">\(\mathbf{k}+\mathbf{Q}\)</span> and
+a valence band state <span class="math notranslate nohighlight">\(v\)</span> with momentum <span class="math notranslate nohighlight">\(\mathbf{k}\)</span>, and <span class="math notranslate nohighlight">\(W_{(\mathbf{k},v,c),(\mathbf{k'},v',c'),\mathbf{Q}}\)</span>
+are the many-body Coulomb interaction matrix element, which can be divided into two parts, direct interaction, <span class="math notranslate nohighlight">\(W^d\)</span>,
+and exchange interaction, <span class="math notranslate nohighlight">\(W^x\)</span>, respectively, i.e.,</p>
+<div class="math notranslate nohighlight" id="equation-eq-w">
+<span class="eqno">(21)<a class="headerlink" href="#equation-eq-w" title="Link to this equation"></a></span>\[\begin{equation}
+    W_{(\mathbf{k},v,c),(\mathbf{k'},v',c'),\mathbf{Q}}=W^d_{(\mathbf{k},v,c),(\mathbf{k'},v',c'),\mathbf{Q}}+W^x_{(\mathbf{k},v,c),(\mathbf{k'},v',c'),\mathbf{Q}}~.
+\end{equation}\]</div>
+<p>Since the Coulomb potential varies slightly inside unit cell in comparison with Bloch functions, we can approximate the
+orbital character of Coulomb term in the following way:</p>
+<div class="math notranslate nohighlight" id="equation-eq-wd">
+<span class="eqno">(22)<a class="headerlink" href="#equation-eq-wd" title="Link to this equation"></a></span>\[\begin{equation}
+    W^{d}_{(\mathbf{k},v,c),(\mathbf{k'},v',c'),\mathbf{Q}}=V(\mathbf{k}-\mathbf{k'}) \ \langle c,\mathbf{k}+\mathbf{Q}|c',\mathbf{k'}+\mathbf{Q} \rangle \ \langle v',\mathbf{k'}|v,\mathbf{k} \rangle
+\end{equation}\]</div>
+<p>and</p>
+<p>where, <span class="math notranslate nohighlight">\(N_{k}\)</span> is the number of <span class="math notranslate nohighlight">\(\textbf{k}-points\)</span> in the BZ.</p>
+<p>In BSE formalism, the real and imaginary parts of the frequency dependent dielectric tensor
+<span class="math notranslate nohighlight">\(\epsilon^{BSE}_{1,\alpha,\beta}(\omega)\)</span> and  <span class="math notranslate nohighlight">\(\epsilon^{BSE}_{2,\alpha,\beta}(\omega)\)</span>
+are obtained from the following expressions:</p>
+<div class="math notranslate nohighlight" id="equation-eq-eps1">
+<span class="eqno">(23)<a class="headerlink" href="#equation-eq-eps1" title="Link to this equation"></a></span>\[\begin{align}
+\epsilon^{BSE}_{1,\alpha,\beta}(\omega) =  \delta_{\alpha,\beta} +  \frac{e^{2} S_{p}}{\epsilon_{0}\Omega N_{\mathbf{k}}} \sum_{n} F_{\alpha,\beta}^{n,BSE}
+&amp;\frac{E_{0}^{n}-\hbar \omega}{\left(\hbar \omega - E_{0}^{n}\right)^{2}+\eta^{2}}~,
+\end{align}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-eps2">
+<span class="eqno">(24)<a class="headerlink" href="#equation-eq-eps2" title="Link to this equation"></a></span>\[\begin{align}
+\epsilon^{BSE}_{2,\alpha,\beta}(\omega)=  \frac{e^{2} S_{p}}{\epsilon_{0}\Omega N_{\mathbf{k}}}  \sum_{n}  F_{\alpha,\beta}^{n,BSE}   \frac{\eta}{\left(\hbar \omega - E_{0}^{n}\right)^{2}+\eta^{2}}~,
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(E_{0}^{n}\)</span> is the n-th direct <span class="math notranslate nohighlight">\((\mathbf{Q}=0)\)</span> excitonic state energy, <span class="math notranslate nohighlight">\(F_{\alpha,\beta}^{n,BSE}\)</span> is
+the excitonic modulated oscillator force, given by,</p>
+<div class="math notranslate nohighlight" id="equation-eq-fosc">
+<span class="eqno">(25)<a class="headerlink" href="#equation-eq-fosc" title="Link to this equation"></a></span>\[\begin{align}
+F_{\alpha,\beta}^{n,BSE} = \left( \sum_{c,v,\mathbf{k}} \frac{A^{n}_{c,v,\mathbf{k},0}\langle c,\mathbf{k} |P_{\alpha}|v,\mathbf{k} \rangle}{\left(E_{c,\mathbf{k}}-E_{v,\mathbf{k}}+i\eta_{1}\right)} \right) \left(\sum_{c',v',\mathbf{k'}} \frac{A^{n*}_{c',v',\mathbf{k'},0}\langle v',\mathbf{k'} |P_{\beta}|c',\mathbf{k'} \rangle}{\left(E_{c',\mathbf{k'}}-E_{v',\mathbf{k'}}-i\eta_{1}\right)} \right)\label{eq:bse-fosc} ~.
+\end{align}\]</div>
+</section>
+<section id="finite-temperature-bse-approach">
+<h1>Finite temperature BSE approach<a class="headerlink" href="#finite-temperature-bse-approach" title="Link to this heading"></a></h1>
+<p>The code also calculate the exciton energy levels, dielectric functions and other optical
+properties at a finite temperature for the excitons with <span class="math notranslate nohighlight">\(\mathbf{Q}=0\)</span> by the flags <span class="math notranslate nohighlight">\(\texttt{BSET= T}\)</span>,
+and <span class="math notranslate nohighlight">\(\texttt{BSET\_BND= T}\)</span> to calculate exciton band structure.
+<span class="red">These flags cannot be combined with their counterparts without thermal effects</span>
+<span class="math notranslate nohighlight">\(\texttt{BSE= T}\)</span> <span class="red">and</span> <span class="math notranslate nohighlight">\(\texttt{BSE\_BND= T}\)</span>, <span class="red">respectively</span>.
+To incoporate the temperature effects, we have to modify BSE as follows <a class="reference internal" href="#albrecht1998" id="id10"><span>[Albrecht1998]</span></a>, <a class="reference internal" href="#marini2008" id="id11"><span>[Marini2008]</span></a>, and <span id="id12">[MolinaSanchez2016]</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(f(E)\)</span> is the Fermi-Dirac distribution, and <span class="math notranslate nohighlight">\(\Xi_{c,\mathbf{k}+\mathbf{Q}}\)</span> is the conduction
+band energy with a correction of temperature effects, defined as :</p>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> is the temperature in <span class="math notranslate nohighlight">\(K\)</span>, given by the flag <span class="math notranslate nohighlight">\(\texttt{TEMP}\)</span>, <span class="math notranslate nohighlight">\(\alpha_{B}\)</span>
+and <span class="math notranslate nohighlight">\(\Theta\)</span> are empirical parameters to be fitted to experimental data, given by the flags <span class="math notranslate nohighlight">\(\texttt{ST}\)</span>
+and <span class="math notranslate nohighlight">\(\texttt{PHAVG}\)</span>, respectively, and the analytical expression of the correction <span class="math notranslate nohighlight">\(\Delta(\alpha_{B},\Theta,T)\)</span>
+depends on the the approximations made in the calculation. Usually, the following three formulations have
+been widely used in the literature. The first one is the frozen atom approximation in which we assume
+<span class="math notranslate nohighlight">\(\Delta(\alpha_{B},\Theta,T)=0\)</span>, given by the flag <span class="math notranslate nohighlight">\(\texttt{TA= FA}\)</span>. The second one is
+Bose-Einstein approximation <a class="reference internal" href="#liu2020" id="id13"><span>[Liu2020]</span></a> given by the flag <span class="math notranslate nohighlight">\(\texttt{TA= BE}\)</span>, where</p>
+<p>where <span class="math notranslate nohighlight">\(\alpha_B\)</span> represents the strength of electron-phonon interactions in si{electronvolt}
+and <span class="math notranslate nohighlight">\(\Theta\)</span> is the average phonon temperature in <span class="math notranslate nohighlight">\(K\)</span>. The third one is given by the
+flag <span class="math notranslate nohighlight">\(\texttt{TA= VE}\)</span>, in which the correction term is described by <a class="reference internal" href="#odonnell1991" id="id14"><span>[ODonnell1991]</span></a>.</p>
+<p>where <span class="math notranslate nohighlight">\(\Theta\)</span> is a dimensionless coupling constant and <span class="math notranslate nohighlight">\(\alpha_B\)</span> is an average of phonon energy in <span class="math notranslate nohighlight">\(eV\)</span>.</p>
+<p>These temperature effects also correct the expressions for the oscillator force <span class="math notranslate nohighlight">\(F_{\alpha,\beta}^{c,v,\mathbf{k}}\)</span>
+and  excitonic modulated oscillator force <span class="math notranslate nohighlight">\(F_{\alpha,\beta}^{n,BSE}\)</span> by</p>
+</section>
+<section id="coulomb-potentials">
+<h1>Coulomb Potentials<a class="headerlink" href="#coulomb-potentials" title="Link to this heading"></a></h1>
+<p>Our code posses several options for the Coulomb interaction <span class="math notranslate nohighlight">\(V_eh\)</span> (reciprocal space) in the BSE formalism. In
+this section we’ll briefly discuss each of them. To avoid divergence in these potentials, a tolerance parameter
+<span class="math notranslate nohighlight">\(\mathbf{Q}_{tol}\)</span> was introduced in our implementation, its value given by the flag <span class="math notranslate nohighlight">\(\texttt{KTOL}\)</span>.</p>
+<section id="bare-coulomb-potential-v3d">
+<h2>Bare Coulomb Potential (V3D)<a class="headerlink" href="#bare-coulomb-potential-v3d" title="Link to this heading"></a></h2>
+<p>This is the traditional Coulomb Potential in reciprocal space, being identified by the input flag
+<span class="math notranslate nohighlight">\(\texttt{COULOMB\_POT= V3D}\)</span>, and described by the following expression</p>
+<div class="math notranslate nohighlight" id="equation-eq-v3d">
+<span class="eqno">(28)<a class="headerlink" href="#equation-eq-v3d" title="Link to this equation"></a></span>\[\begin{equation}
+    V_{e h}(\mathbf{Q}) = \frac{4 \pi e^{2}}{\epsilon_{0} \mathbf{Q}^{2}}~,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\epsilon_{0}\)</span> is the vacuum permittivity.</p>
+<div class="math notranslate nohighlight" id="equation-eq-v3d">
+<span class="eqno">(28)<a class="headerlink" href="#equation-eq-v3d" title="Link to this equation"></a></span>\[\begin{equation}
+V(\mathbf{Q}) = -\frac{e^{2}}{2 V_{uc} \epsilon_{0}  \mathbf{Q}^2}~,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(V_{uc}\)</span> is the unit cell volume. To avoid the divergence at <span class="math notranslate nohighlight">\(\mathbf{Q} \rightarrow 0\)</span>, we define</p>
+<div class="math notranslate nohighlight" id="equation-eq-v3d">
+<span class="eqno">(28)<a class="headerlink" href="#equation-eq-v3d" title="Link to this equation"></a></span>\[\begin{equation}
+    V(\mathbf{|Q|&lt;Q_{tol}}) = 0.
+\end{equation}\]</div>
+</section>
+<section id="d-keldysh-potential-v2dk">
+<h2>2D Keldysh Potential(V2DK)<a class="headerlink" href="#d-keldysh-potential-v2dk" title="Link to this heading"></a></h2>
+<p>A Keldysh type Coulomb potential normally be used to properly describe the 2D Coulomb
+interaction <a class="reference internal" href="#ridolfi2018" id="id15"><span>[Ridolfi2018]</span></a>. It’s  selected by the flag
+<span class="math notranslate nohighlight">\(\texttt{COULOMB\_POT= V2DK}\)</span> in main input file, with the following equation</p>
+<div class="math notranslate nohighlight" id="equation-eq-v2dk">
+<span class="eqno">(32)<a class="headerlink" href="#equation-eq-v2dk" title="Link to this equation"></a></span>\[\begin{equation}
+    V(\mathbf{Q})=-\frac{e^{2}}{2 A_{uc} \epsilon_{0} \epsilon_{d} |\mathbf{Q}| (1+r_{0} |\mathbf{Q}|)}~. \label{keldysh-k}
+\end{equation}\]</div>
+<p>with the objective to avoid Coulomb potential singularity, we make the following approximation
+for <span class="math notranslate nohighlight">\(|\mathbf{Q}| \le \mathbf{Q}_{tol}\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-eq-v2dk">
+<span class="eqno">(32)<a class="headerlink" href="#equation-eq-v2dk" title="Link to this equation"></a></span>\[\begin{equation}
+    V(|\mathbf{Q}|  \le \mathbf{Q}_{tol} ) = \frac{-e^{2} a N_{k}}{4 \pi A_{uc} \epsilon_{0} \epsilon_{d}} \left[\alpha_{1}+\alpha_{2} \Delta+\alpha_{3} \Delta^{2} \right],
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta=2 \pi r_{0} /a N_{k}\)</span>, and <span class="math notranslate nohighlight">\(\alpha_{1}=1.76\)</span>, <span class="math notranslate nohighlight">\(\alpha_{2}=1\)</span>,
+and <span class="math notranslate nohighlight">\(\alpha_{3}=0\)</span> <a class="reference internal" href="#dias2020" id="id16"><span>[Dias2020]</span></a>. <span class="math notranslate nohighlight">\(N_{k}\)</span> is the number of <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-points used
+in <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-mesh, <span class="math notranslate nohighlight">\(A_{uc}\)</span> is the unit cell area and <span class="math notranslate nohighlight">\(a\)</span> is the average of
+the first and second lattice vectors size. The Coulomb potential screening length <span class="math notranslate nohighlight">\(r_0\)</span> is given by the expression:</p>
+<div class="math notranslate nohighlight" id="equation-eq-v2dk">
+<span class="eqno">(32)<a class="headerlink" href="#equation-eq-v2dk" title="Link to this equation"></a></span>\[\begin{equation}
+r_0 = l_c \frac{(\epsilon_{2}-1)}{(\epsilon_{1}+\epsilon_{3})} ~,
+\end{equation}\]</div>
+<p>and the effective dielectric constant <span class="math notranslate nohighlight">\(\epsilon_{d}\)</span> is given by:</p>
+<div class="math notranslate nohighlight" id="equation-eq-v2dk">
+<span class="eqno">(32)<a class="headerlink" href="#equation-eq-v2dk" title="Link to this equation"></a></span>\[\begin{equation}
+    \epsilon_{d} = \frac{\epsilon_{1}+\epsilon_{3}}{2}
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(l_{c}\)</span> is a free parameter, given by the flag <span class="math notranslate nohighlight">\(\texttt{LC}\)</span>,
+that corresponds to the third lattice vector size or the distance between two neighbor
+layers of the 2D systems, <span class="math notranslate nohighlight">\(\epsilon_{2}\)</span> are in plane macroscopic effective
+dielectric constant, given in the main input file by the flag <span class="math notranslate nohighlight">\(\texttt{EDIEL}\)</span>, <span class="math notranslate nohighlight">\(\epsilon_{1}\)</span> and
+<span class="math notranslate nohighlight">\(\epsilon_{3}\)</span> corresponds to the dielectric constants of the substrate above and bellow, given by
+the flags <span class="math notranslate nohighlight">\(\texttt{EDIEL\_T}\)</span> and  <span class="math notranslate nohighlight">\(\texttt{EDIEL\_B}\)</span> respectively.</p>
+</section>
+<section id="d-rytova-keldysh-potential-v2drk">
+<h2>2D Rytova–Keldysh Potential (V2DRK)<a class="headerlink" href="#d-rytova-keldysh-potential-v2drk" title="Link to this heading"></a></h2>
+<p>2D Rytova–Keldysh Potential is another version of a Keldysh type Coulomb potential used
+for 2D systems <a class="reference internal" href="#vantuan2018" id="id17"><span>[VanTuan2018]</span></a>. It’s selected by the flag <span class="math notranslate nohighlight">\(\texttt{COULOMB\_POT= V2DRK}\)</span>
+in main input file, being described,</p>
+<div class="math notranslate nohighlight" id="equation-eq-v2drk">
+<span class="eqno">(35)<a class="headerlink" href="#equation-eq-v2drk" title="Link to this equation"></a></span>\[\begin{equation}
+    V(\mathbf{Q}) =  -\frac{e^{2}}{2 A_{uc} \epsilon_{0} |\mathbf{Q}| F(\mathbf{Q})} e^{-w_{0} |\mathbf{Q}|}  ~,
+\end{equation}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq-v2drk">
+<span class="eqno">(35)<a class="headerlink" href="#equation-eq-v2drk" title="Link to this equation"></a></span>\[\begin{equation}
+    F(\mathbf{Q}) = \frac{\left[1-\left(p_{b} \ p_{t} \ e^{-2 |\mathbf{Q}| \eta l_{c} }\right)\right] \kappa}{\left[1-\left(p_{t} e^{-\eta |\mathbf{Q}| l_{c}}\right)\right] \left[1-\left(p_{b} e^{-\eta |\mathbf{Q}| l_{c}}\right)\right]} + r_{0} |\mathbf{Q}| e^{-w_{0} |\mathbf{Q}|}
+\end{equation}\]</div>
+<p>and</p>
+<p>where <span class="math notranslate nohighlight">\(A_{uc}\)</span> is the area of crystal unit cell, <span class="math notranslate nohighlight">\(w_{0}\)</span> and <span class="math notranslate nohighlight">\(r_{0}\)</span> are free
+parameters given by the flags <span class="math notranslate nohighlight">\(\texttt{W\_COUL}\)</span> and <span class="math notranslate nohighlight">\(\texttt{R\_0}\)</span> respectively.
+<span class="math notranslate nohighlight">\(\epsilon_{2}\)</span> is the in plane effective dielectric constant of the crystal, given in the
+main input file by the flag <span class="math notranslate nohighlight">\(\texttt{EDIEL}\)</span>, <span class="math notranslate nohighlight">\(\epsilon_{z}\)</span> is the out of plane
+effective dielectric constant of the crystal, given by the flag <span class="math notranslate nohighlight">\(\texttt{EDIEL\_Z}\)</span>, <span class="math notranslate nohighlight">\(\epsilon_{b}\)</span>
+is the dielectric constant of the environment bellow the 2D system, given by the flag <span class="math notranslate nohighlight">\(\texttt{EDIEL\_B}\)</span>,
+<span class="math notranslate nohighlight">\(\epsilon_{t}\)</span> is the dielectric constant of the environment above the 2D system, given by the
+flag <span class="math notranslate nohighlight">\(\texttt{EDIEL\_T}\)</span>. <span class="math notranslate nohighlight">\(l_{c}\)</span> refers to the crystal thickness (in <span class="math notranslate nohighlight">\(\mathrm{\mathring{A}}\)</span>),
+given by the flag <span class="math notranslate nohighlight">\(\texttt{LC}\)</span>.</p>
+<p>To avoid the divergence at <span class="math notranslate nohighlight">\(\mathbf{Q} \rightarrow 0\)</span>, we consider the following</p>
+<div class="math notranslate nohighlight" id="equation-eq-v2drk">
+<span class="eqno">(35)<a class="headerlink" href="#equation-eq-v2drk" title="Link to this equation"></a></span>\[\begin{equation}
+    V(\mathbf{|Q|&lt;Q_{tol}}) = 0~.
+\end{equation}\]</div>
+</section>
+<section id="d-truncated-coulomb-potential-v2dt">
+<h2>2D truncated Coulomb Potential (V2DT)<a class="headerlink" href="#d-truncated-coulomb-potential-v2dt" title="Link to this heading"></a></h2>
+<p>A Coulomb potential truncated for 2D systems, proposed by Rozzi textit{et. al.} <a class="reference internal" href="#rozzi2006" id="id18"><span>[Rozzi2006]</span></a> being
+selected by the flag texttt{COULOMB_POT= V2DT} in main input file. This potential has the following expression:</p>
+<div class="math notranslate nohighlight" id="equation-eq-v2dt">
+<span class="eqno">(37)<a class="headerlink" href="#equation-eq-v2dt" title="Link to this equation"></a></span>\[\begin{equation}
+    V(\mathbf{Q}) =  -\frac{e^{2}}{2 V_{uc} \epsilon_{0}  \mathbf{Q}^2} \left[ 1 - e^{-C_{2}} \left( C_{1} \sin(C_3) - \cos(C_3) \right) \right]~,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(V_{uc}\)</span> is volume of the unit cell and <span class="math notranslate nohighlight">\(\mathbf{r}_{3}\)</span> is the size of the third
+lattice vector (real space). C:math:<cite>_1</cite>, C:math:<cite>_2</cite> and C:math:<cite>_3</cite> are defined as,</p>
+<div class="math notranslate nohighlight" id="equation-eq-v2dt">
+<span class="eqno">(37)<a class="headerlink" href="#equation-eq-v2dt" title="Link to this equation"></a></span>\[\begin{split}\begin{eqnarray}
+    C_{1} = \frac{|Q_{z}|}{\sqrt{Q_{x}^{2}+Q_{y}^{2}}}~,\nonumber \\
+    C_{2} = \frac{\mathbf{r}_{3}}{2} \sqrt{Q_{x}^{2}+Q_{y}^{2}}~, \nonumber \\
+    C_{3} = \frac{\mathbf{r}_{3}}{2} |Q_{z}|~.
+\end{eqnarray}\end{split}\]</div>
+<p>If <span class="math notranslate nohighlight">\(\sqrt{Q_{x}^{2}+Q_{y}^{2}} &lt; |\mathbf{Q}_{tol}|\)</span> and <span class="math notranslate nohighlight">\(|Q_{z}| \ge |\mathbf{Q}_{tol}|\)</span>, then
+the Coulomb potential is described by,</p>
+<div class="math notranslate nohighlight" id="equation-eq-vq">
+<span class="eqno">(39)<a class="headerlink" href="#equation-eq-vq" title="Link to this equation"></a></span>\[\begin{equation}
+    V(\mathbf{Q}) =  -\frac{e^{2} }{2 V_{uc} \epsilon_{0} \mathbf{Q}^2} \left[ 1 - \cos(0.5 |Q_{z}|
+    \mathbf{r}_{3}) - (0.5 |Q_{z}| \mathbf{r}_{3}) \sin(0.5 |Q_{z}| \mathbf{r}_{3})  \right] .
+\end{equation}\]</div>
+<p>Else if <span class="math notranslate nohighlight">\(\sqrt{Q_{x}^{2}+Q_{y}^{2}} &lt; |\mathbf{Q}_{tol}|\)</span> and <span class="math notranslate nohighlight">\(|Q_{z}| &lt; |\mathbf{Q}_{tol}|\)</span>,
+then Coulomb potential becomes,</p>
+<div class="math notranslate nohighlight" id="equation-eq-vq">
+<span class="eqno">(39)<a class="headerlink" href="#equation-eq-vq" title="Link to this equation"></a></span>\[\begin{equation}
+    V(\mathbf{Q}) = -\frac{e^{2} }{2 V_{uc} \epsilon_{0}} \left(\frac{\mathbf{r}_{3}^{2}}{8} \right)~,
+\end{equation}\]</div>
+</section>
+<section id="d-truncated-simplified-coulomb-potential-v2dt2">
+<h2>2D truncated simplified Coulomb Potential (V2DT2)<a class="headerlink" href="#d-truncated-simplified-coulomb-potential-v2dt2" title="Link to this heading"></a></h2>
+<p>A variation for the truncated Coulomb potential for 2D systems proposed by
+IsmailBeigi textit{et. al.} <a class="reference internal" href="#ismailbeigi2006" id="id19"><span>[IsmailBeigi2006]</span></a> being selected by the flag <span class="math notranslate nohighlight">\(\texttt{COULOMB\_POT= V2DT2}\)</span>
+in main input file. It has the following expression:</p>
+<div class="math notranslate nohighlight" id="equation-eq-v2dt2">
+<span class="eqno">(41)<a class="headerlink" href="#equation-eq-v2dt2" title="Link to this equation"></a></span>\[\begin{align}
+    &amp;V(\mathbf{Q}) =  -\frac{e^{2}}{2 V_{uc} \epsilon_{0}  \mathbf{Q}^2}  \left[1-\text{e}^{-Q_{xy}Z_{c}}\cos(Q_{z}Z_{c})\right] ~,
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Q_{xy}=\sqrt{(Q_{x}^{2}+Q_{y}^{2})}\)</span>, <span class="math notranslate nohighlight">\(V_{uc}\)</span> is the unit cell volume and <span class="math notranslate nohighlight">\(Z_c\)</span> is half
+of the lattice vector in <span class="math notranslate nohighlight">\(\hat{z}\)</span> direction, given by the flag <span class="math notranslate nohighlight">\(\texttt{LC}\)</span>.</p>
+<p>To avoid the divergence at <span class="math notranslate nohighlight">\(\mathbf{Q} \rightarrow 0\)</span>, we suppose</p>
+<div class="math notranslate nohighlight" id="equation-eq-v2dt2">
+<span class="eqno">(41)<a class="headerlink" href="#equation-eq-v2dt2" title="Link to this equation"></a></span>\[\begin{equation}
+    V(\mathbf{|Q|&lt;Q_{tol}}) = 0~.
+\end{equation}\]</div>
+</section>
+<section id="d-ohno-potential-v2doh">
+<h2>2D Ohno Potential (V2DOH)<a class="headerlink" href="#d-ohno-potential-v2doh" title="Link to this heading"></a></h2>
+<p>Ohno Coulomb potential for 2D systems <a class="reference internal" href="#trolle2014" id="id20"><span>[Trolle2014]</span></a> being selected by the
+flag <span class="math notranslate nohighlight">\(\texttt{COULOMB\_POT= V2DOH}\)</span> in main input file. It is given by the following expression:</p>
+<div class="math notranslate nohighlight" id="equation-eq-v2doh">
+<span class="eqno">(43)<a class="headerlink" href="#equation-eq-v2doh" title="Link to this equation"></a></span>\[\begin{equation}
+V(\mathbf{Q}) =  -\frac{e^{2}}{2 A_{uc} \epsilon_{0} \epsilon_{d}  |\mathbf{Q}|}  e^{-w_{0} |\mathbf{Q}|}~,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_{uc}\)</span> is the unit cell area, <span class="math notranslate nohighlight">\(\epsilon_{d}\)</span> is an effective dielectric constant parameter,
+given by the flag <span class="math notranslate nohighlight">\(\texttt{EDIEL}\)</span>, <span class="math notranslate nohighlight">\(w_{0}\)</span> is a free parameter given by the flag <span class="math notranslate nohighlight">\(\texttt{W\_COUL}\)</span>.</p>
+<p>To avoid the divergence at <span class="math notranslate nohighlight">\(\mathbf{Q} \rightarrow 0\)</span>, we define</p>
+<div class="math notranslate nohighlight" id="equation-eq-v2doh">
+<span class="eqno">(43)<a class="headerlink" href="#equation-eq-v2doh" title="Link to this equation"></a></span>\[\begin{equation}
+    V(\mathbf{|Q|&lt;Q_{tol}}) = 0~.
+\end{equation}\]</div>
+</section>
+<section id="d-potential-v0dt">
+<h2>0D Potential (V0DT)<a class="headerlink" href="#d-potential-v0dt" title="Link to this heading"></a></h2>
+<p>An adaption of the Coulomb potential for 0D systems, proposed by Rozzi <span class="math notranslate nohighlight">\(\textit{et. al.}\)</span> <a class="reference internal" href="#rozzi2006" id="id21"><span>[Rozzi2006]</span></a>,
+being selected by the flag <span class="math notranslate nohighlight">\(\texttt{COULOMB\_POT= V0DT}\)</span> in main input file. It is described
+by the following expression:</p>
+<div class="math notranslate nohighlight" id="equation-eq-v0dt">
+<span class="eqno">(44)<a class="headerlink" href="#equation-eq-v0dt" title="Link to this equation"></a></span>\[\begin{equation}
+V(\mathbf{Q}) =  -\frac{e^{2}}{2 V_{uc} \epsilon_{0}  \mathbf{Q}^{2}} \left[1- \cos(0.5 \mathbf{r}_{min} |\mathbf{Q}|) \right]
+\end{equation}\]</div>
+<p>To avoid the divergence at <span class="math notranslate nohighlight">\(\mathbf{Q} \rightarrow 0\)</span>, we consider the following condition</p>
+<p>where <span class="math notranslate nohighlight">\(V_{uc}\)</span> is the unit cell volume and <span class="math notranslate nohighlight">\(\mathbf{r}_{min}\)</span> is the size of the smallest lattice vector (real space).</p>
+</section>
+</section>
+<section id="exciton-radiative-lifetime">
+<h1>Exciton radiative lifetime<a class="headerlink" href="#exciton-radiative-lifetime" title="Link to this heading"></a></h1>
+<p>In this code the exciton radiative lifetime is calculated directly from the excitonic state oscillator
+force (<span class="math notranslate nohighlight">\(F_{\alpha,\beta}^{n,BSE}\)</span>), described in equation <a class="reference internal" href="#equation-eq-fosc">(25)</a>. Being calculated using
+the flag <span class="math notranslate nohighlight">\(\texttt{BSE= T}\)</span> combined with <span class="math notranslate nohighlight">\(\texttt{SPEC= T}\)</span>, where the lifetime is obtained
+in seconds. This quantity is only calculated for direct excitons.</p>
+<p>For 3D systems (<span class="math notranslate nohighlight">\(\texttt{SYSDIM= 3D}\)</span>), the lifetime, for the n-th excitonic states, is
+obtained by,</p>
+<div class="math notranslate nohighlight" id="equation-eq-tau3d">
+<span class="eqno">(45)<a class="headerlink" href="#equation-eq-tau3d" title="Link to this equation"></a></span>\[\begin{equation}
+    \tau_{3D,\alpha,\beta}^{n} = \frac{3 c^{2}  \hbar^{3} N_{\mathbf{k}} }{4 \chi  \left(E_{0}^{n}\right)^{3}  F_{\alpha,\beta}^{n,BSE}} ~.
+\end{equation}\]</div>
+<p>While for 2D systems (<span class="math notranslate nohighlight">\(\texttt{SYSDIM= 2D}\)</span>), a similar expression is given by <a class="reference internal" href="#palummo2015" id="id22"><span>[Palummo2015]</span></a></p>
+<div class="math notranslate nohighlight" id="equation-eq-tau2d">
+<span class="eqno">(46)<a class="headerlink" href="#equation-eq-tau2d" title="Link to this equation"></a></span>\[\begin{equation}
+    \tau_{2D,\alpha,\beta}^{n} = \frac{\hbar A_{uc} N_{\mathbf{k}} }{8 \pi \chi E_{0}^{n}  F_{\alpha,\beta}^{n,BSE}}~.
+\end{equation}\]</div>
+<p>Finally for 1D systems (<span class="math notranslate nohighlight">\(\texttt{SYSDIM= 1D}\)</span>), it is described by <a class="reference internal" href="#spataru2005" id="id23"><span>[Spataru2005]</span></a></p>
+<div class="math notranslate nohighlight" id="equation-eq-tau1d">
+<span class="eqno">(47)<a class="headerlink" href="#equation-eq-tau1d" title="Link to this equation"></a></span>\[\begin{equation}
+    \tau_{1D,\alpha,\beta}^{n} = \frac{c \hbar^{2} \mathbf{r}_{1} N_{\mathbf{k}} }{2 \pi \chi  \left(E_{0}^{n}\right)^{2} F_{\alpha,\beta}^{n,BSE}} ~,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is the light speed, <span class="math notranslate nohighlight">\(E_{0}^{n}\)</span> is the n-th excitonic state energy, <span class="math notranslate nohighlight">\(A_{uc}\)</span> is
+the 2D crystal unit cell area, <span class="math notranslate nohighlight">\(\mathbf{r}_{1}\)</span> is the 1D unit cell size and <span class="math notranslate nohighlight">\(\chi\)</span> is the fine
+structure constant, given by:</p>
+<div class="math notranslate nohighlight" id="equation-eq-chi">
+<span class="eqno">(48)<a class="headerlink" href="#equation-eq-chi" title="Link to this equation"></a></span>\[\begin{equation}
+    \chi = \frac{e^{2}}{4 \pi \epsilon_{0} \hbar c} \approx \frac{1}{137}~.
+\end{equation}\]</div>
+</section>
+<section id="k-mesh-generator">
+<h1>k-mesh generator<a class="headerlink" href="#k-mesh-generator" title="Link to this heading"></a></h1>
+<p>The <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-meshes are generated using the Monkhorst–Pack scheme <a class="reference internal" href="#monkhorst1976" id="id24"><span>[Monkhorst1976]</span></a>,
+where the <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-points are defined by the following expression
+<span class="math notranslate nohighlight">\(\texttt{NGY}\)</span> and <span class="math notranslate nohighlight">\(\texttt{NGZ}\)</span> in the input file, it’s possible to define it
+through the flags <span class="math notranslate nohighlight">\(\texttt{MESH\_TYPE= RK3D}\)</span> or <span class="math notranslate nohighlight">\(\texttt{MESH\_TYPE= RK2D}\)</span>,
+choosing a density of <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-points defined by the flag <span class="math notranslate nohighlight">\(\texttt{RK}\)</span>. The
+values of <span class="math notranslate nohighlight">\(\texttt{NGX}\)</span>, <span class="math notranslate nohighlight">\(\texttt{NGY}\)</span> and <span class="math notranslate nohighlight">\(\texttt{NGZ}\)</span>, are obtained
+for the option <span class="math notranslate nohighlight">\(\texttt{MESH\_TYPE= RK3D}\)</span> by the following expression:</p>
+<div class="math notranslate nohighlight" id="equation-eq-ngxyz">
+<span class="eqno">(49)<a class="headerlink" href="#equation-eq-ngxyz" title="Link to this equation"></a></span>\[\begin{split}\begin{eqnarray}
+    NGX = int \left(max\left(1,\texttt{RK} \frac{|\mathbf{b}_{1}|}{2 \pi}+0.5\right)\right)\nonumber \\
+    NGY = int \left(max\left(1,\texttt{RK} \frac{|\mathbf{b}_{2}|}{2 \pi}+0.5\right)\right) \nonumber \\
+    NGZ = int \left(max\left(1,\texttt{RK} \frac{|\mathbf{b}_{3}|}{2 \pi}+0.5\right)\right)
+\end{eqnarray}\end{split}\]</div>
+<p>for the option <span class="math notranslate nohighlight">\(\texttt{MESH\_TYPE= RK2D}\)</span> the only difference is that <span class="math notranslate nohighlight">\(\texttt{NGZ=1}\)</span>
+independent of <span class="math notranslate nohighlight">\(\texttt{RK}\)</span>.</p>
+</section>
+<section id="solar-cell-power-conversion-efficiency">
+<h1>Solar Cell Power Conversion Efficiency<a class="headerlink" href="#solar-cell-power-conversion-efficiency" title="Link to this heading"></a></h1>
+<p>To estimate the power conversion efficiency (PCE), of the studied system, in the scope of
+Shockley-Queisser Limit (SQ-limit), <a class="reference internal" href="#shockley1961" id="id25"><span>[Shockley1961]</span></a> and spectroscopy limited maximum efficiency (SLME)
+scheme <a class="reference internal" href="#yu2012" id="id26"><span>[Yu2012]</span></a>. This simulation is available by the input flag <span class="math notranslate nohighlight">\(\texttt{PCE= T}\)</span>.</p>
+<p>Both approximations are based on the principle of detailed balance between absorbed photons and emitted
+photons. Below, we will summarize the mathematical formalism <a class="reference internal" href="#bercx2018" id="id27"><span>[Bercx2018]</span></a> and the SQ-limit and SLME approximations.</p>
+<p>The PCE is defined as the maximum output power density (<span class="math notranslate nohighlight">\(P_{\text{PV}}\)</span>) from the photovoltaic device
+divided by the total incoming power density from the solar spectrum, <span class="math notranslate nohighlight">\(P_{solar}\)</span>, as follows,</p>
+<div class="math notranslate nohighlight" id="equation-eq-pce">
+<span class="eqno">(50)<a class="headerlink" href="#equation-eq-pce" title="Link to this equation"></a></span>\[\begin{equation}
+    \text{PCE} = \frac{P_{\text{PV}}}{P_{solar}}~,
+\end{equation}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq-psolar">
+<span class="eqno">(51)<a class="headerlink" href="#equation-eq-psolar" title="Link to this equation"></a></span>\[\begin{equation}
+    P_{solar} = \int_{0}^{\infty}P(E)dE~,
+\end{equation}\]</div>
+<p>and <span class="math notranslate nohighlight">\(P(E)\)</span> is the solar energy flux, which is selected by the flag <span class="math notranslate nohighlight">\(\texttt{SES}\)</span>, and has
+the options: <span class="math notranslate nohighlight">\(\texttt{AM15G}\)</span>, <span class="math notranslate nohighlight">\(\texttt{AM15D}\)</span> and <span class="math notranslate nohighlight">\(\texttt{AM0G}\)</span>, which corresponds
+to the standard solar spectrum for non-concentrated photovoltaic conversion, taking light absorption
+and scattering in the atmosphere into account <a class="reference internal" href="#astm2012" id="id28"><span>[Astm2012]</span></a>. The output power density is
+described by the product <span class="math notranslate nohighlight">\(J(V)V\)</span>, as the maximum output power density (<span class="math notranslate nohighlight">\(P_{\text{PV}}\)</span>) is
+obtained maximizing the <span class="math notranslate nohighlight">\(J-V\)</span> characteristic of an illuminated solar cell :</p>
+<div class="math notranslate nohighlight" id="equation-eq-pv">
+<span class="eqno">(52)<a class="headerlink" href="#equation-eq-pv" title="Link to this equation"></a></span>\[\begin{equation}
+    P_{\text{PV}} = J(V_{max}) V_{max}~,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(V_{max}\)</span> is the voltage that results in the maximum output power density. The open circuit voltage
+<span class="math notranslate nohighlight">\(V_{oc}\)</span> is the voltage that minimizes <span class="math notranslate nohighlight">\(J(V)\)</span>. In this method, the current density, <span class="math notranslate nohighlight">\(J(V)\)</span>,
+are described by the following expression:</p>
+<div class="math notranslate nohighlight" id="equation-eq-jv">
+<span class="eqno">(53)<a class="headerlink" href="#equation-eq-jv" title="Link to this equation"></a></span>\[\begin{equation}
+J(V) = J_{sc}-\frac{J_{0}}{fr}\left(exp\left(\frac{e V}{k_{\text{B}}T}\right)-1\right)~,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_{\text{B}}\)</span> is Boltzmann’s constant, <span class="math notranslate nohighlight">\(e\)</span> is the elementary charge, <span class="math notranslate nohighlight">\(fr\)</span> is the
+radiative electron-hole recombination fraction and <span class="math notranslate nohighlight">\(T\)</span> is the temperature of the solar cell,
+defined by the flag <span class="math notranslate nohighlight">\(\texttt{CTEMP}\)</span>. <span class="math notranslate nohighlight">\(J_{sc}\)</span> is the short-circuit current density, also
+known as the illuminated current or photogenerated current, calculated from the following expression,</p>
+<div class="math notranslate nohighlight">
+\[\]</div>
+<p>begin{equation}
+J_{sc} = eint_{0}^{infty}a(E)frac{P(E)}{E}dE~.
+end{equation}
+<span class="math notranslate nohighlight">\(a(E)\)</span> is the absorbance, which is defined as the ratio of power absorbed by the solar device over the
+power of incident sunlight.</p>
+<p><span class="math notranslate nohighlight">\(J_{0}\)</span> is the reverse saturation current density, calculated considering the detailed balance principle
+when in equilibrium conditions, the photon emission rate from radiative recombination is equal to the photon
+absorption from the surrounding environment. This was done considering our solar cell attached to an ideal
+heat sink, expecting the cell temperature to be the ambient temperature.  Hence, the spectrum of the
+surrounding environment is that of a black body at cell temperature <span class="math notranslate nohighlight">\(T\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-eq-phi">
+<span class="eqno">(54)<a class="headerlink" href="#equation-eq-phi" title="Link to this equation"></a></span>\[\begin{equation}
+J_{0} = e \pi \int_{0}^{\infty} a(E) \Phi_{bb}(E) dE~,
+\end{equation}\]</div>
+<p>where,</p>
+<div class="math notranslate nohighlight" id="equation-eq-phibb">
+<span class="eqno">(55)<a class="headerlink" href="#equation-eq-phibb" title="Link to this equation"></a></span>\[\begin{equation}
+\Phi_{bb}(E) = \frac{2E^{2}}{h^{3}v_{c}^{2}} \left(e^{\frac{E}{k_{\text{B}}T}}-1\right)^{-1}~,
+\end{equation}\]</div>
+<p>and <span class="math notranslate nohighlight">\(h\)</span> is Planck’s constant and <span class="math notranslate nohighlight">\(v_{c}\)</span> is the speed of light. Complementary we can
+also calculate the Fill-Factor (<span class="math notranslate nohighlight">\(FF\)</span>) of our solar device, by the expression:</p>
+<div class="math notranslate nohighlight" id="equation-eq-ff">
+<span class="eqno">(56)<a class="headerlink" href="#equation-eq-ff" title="Link to this equation"></a></span>\[\begin{equation}
+    FF = \frac{V_{max} J(V_{max})}{V_{oc} J_{sc}}~.
+\end{equation}\]</div>
+<section id="shockley-queisser-limit">
+<h2>Shockley–Queisser Limit<a class="headerlink" href="#shockley-queisser-limit" title="Link to this heading"></a></h2>
+<p>In the SQ-limit approximation, we consider the absorbance, <span class="math notranslate nohighlight">\(a(E)\)</span>, as a Heaviside step function,
+where all photons with energy higher or equal to the energy bandgap, <span class="math notranslate nohighlight">\(E_g\)</span>, are absorbed, i.e.,
+<span class="math notranslate nohighlight">\(a(E) = 1\)</span> for <span class="math notranslate nohighlight">\(E{~}\ge{~}E_{g}\)</span>, and <span class="math notranslate nohighlight">\(a(E) = 0\)</span> for <span class="math notranslate nohighlight">\(E{~}&lt;{~}E_{g}\)</span>. Furthermore,
+this approximation assumes <span class="math notranslate nohighlight">\(fr = 1\)</span>, i.e., the radiative recombination process is the only
+recombination process for all systems, neglecting the non-radiative recombinations (e.g., Auger recombination)
+due to indirect bandgap <a class="reference internal" href="#huldt1971" id="id29"><span>[Huldt1971]</span></a>, <span id="id30">[Green_671_1984]</span>.</p>
+</section>
+<section id="spectroscopy-limited-maximum-efficiency">
+<h2>Spectroscopy Limited Maximum Efficiency<a class="headerlink" href="#spectroscopy-limited-maximum-efficiency" title="Link to this heading"></a></h2>
+<p>In contrast with the SQ-limit approach, the SLME approximation requires the total absorption coefficient,</p>
+<div class="math notranslate nohighlight" id="equation-eq-alpha">
+<span class="eqno">(57)<a class="headerlink" href="#equation-eq-alpha" title="Link to this equation"></a></span>\[\begin{equation}
+    \alpha(E) = \frac{4\pi}{\lambda}k(E)~,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k(E)\)</span> is the imaginary part of the dielectric function, <span class="math notranslate nohighlight">\(\epsilon(E)\)</span>, and <span class="math notranslate nohighlight">\(\lambda\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-lambda">
+<span class="eqno">(58)<a class="headerlink" href="#equation-eq-lambda" title="Link to this equation"></a></span>\[\begin{equation}
+    A(\omega)=A_{x,x}(\omega)+A_{y,y}(\omega)+A_{z,z}(\omega)~,
+\end{equation}\]</div>
+<p>material thickness, <span class="math notranslate nohighlight">\(\Delta\)</span>, and the bandgaps. Its also considers the non-radiative
+recombination in the solar cell by modeling the fraction of radiative recombination, <span class="math notranslate nohighlight">\(fr\)</span>, using a
+Boltzmann factor <a class="reference internal" href="#yu2012" id="id31"><span>[Yu2012]</span></a>,</p>
+<div class="math notranslate nohighlight" id="equation-eq-fr">
+<span class="eqno">(59)<a class="headerlink" href="#equation-eq-fr" title="Link to this equation"></a></span>\[\begin{equation}
+fr = e^{-\frac{\delta}{k_{B}T}}
+\end{equation}\]</div>
+<p>for calculations in the scope of IPA (without excitons), we can define <span class="math notranslate nohighlight">\(\delta = E_{op}-E_{g}\)</span>, where <span class="math notranslate nohighlight">\(E_{op}\)</span>
+is the optical bandgap, given by the flag <span class="math notranslate nohighlight">\(\texttt{EGD}\)</span> and <span class="math notranslate nohighlight">\(E_{g}\)</span> is the fundamental energy
+bandgap, given by the flag <span class="math notranslate nohighlight">\(\texttt{EG}\)</span>. In the scope of BSE (with excitonic effects), we can define
+<span class="math notranslate nohighlight">\(\delta = Ex_{br}-Ex_{gs}\)</span>, where <span class="math notranslate nohighlight">\(Ex_{br}\)</span> is the exciton bright ground state (optical bandgap
+considering excitonic effects), given by the flag <span class="math notranslate nohighlight">\(\texttt{EBGS}\)</span>, while <span class="math notranslate nohighlight">\(Ex_{gs}\)</span> is the exciton
+ground state, given by the flag texttt{EGS}. The absorbance, <span class="math notranslate nohighlight">\(a(E)\)</span>, is obtained considering the solar cell
+with the same conditions of SQ-Limit described previously, given by the following expression <a class="reference internal" href="#yu2012" id="id32"><span>[Yu2012]</span></a>, <a class="reference internal" href="#duan2019" id="id33"><span>[Duan2019]</span></a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq-a">
+<span class="eqno">(60)<a class="headerlink" href="#equation-eq-a" title="Link to this equation"></a></span>\[\begin{equation}
+a(E) = 1 - e^{-2 \ A(\omega) \ \Delta}~,
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(E = \hbar\omega\)</span>, and <span class="math notranslate nohighlight">\(\Delta\)</span> is the material thickness, in this code we calculate
+the PCE, in the scope of SLME method from <span class="math notranslate nohighlight">\(\Delta=0\)</span> until <span class="math notranslate nohighlight">\(\Delta= \Delta_{max}\)</span>, being
+<span class="math notranslate nohighlight">\(\Delta_{max}\)</span> defined by the flag <span class="math notranslate nohighlight">\(\texttt{THMAX}\)</span>.</p>
+</section>
+</section>
+<section id="references">
+<h1>References<a class="headerlink" href="#references" title="Link to this heading"></a></h1>
+<blockquote>
+<div><div class="citation" id="wannier90" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Wannier90<span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1016/j.cpc.2007.11.016">https://doi.org/10.1016/j.cpc.2007.11.016</a></p>
+</div>
+<div class="citation" id="xiao2010" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">Xiao2010</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/RevModPhys.82.1959">https://doi.org/10.1103/RevModPhys.82.1959</a></p>
+</div>
+<div class="citation" id="zhang2011" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">Zhang2011</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevLett.106.156801">https://doi.org/10.1103/PhysRevLett.106.156801</a></p>
+</div>
+<div class="citation" id="cai2013" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">Cai2013</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevB.88.115140">https://doi.org/10.1103/PhysRevB.88.115140</a></p>
+</div>
+<div class="citation" id="kormanyos2018" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">Kormanyos2018</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevB.98.035408">https://doi.org/10.1103/PhysRevB.98.035408</a></p>
+</div>
+<div class="citation" id="wang2006" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">Wang2006</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevB.74.195118">https://doi.org/10.1103/PhysRevB.74.195118</a></p>
+</div>
+<div class="citation" id="dias2020" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Dias2020<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id7">1</a>,<a role="doc-backlink" href="#id16">2</a>)</span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevB.101.085406">https://doi.org/10.1103/PhysRevB.101.085406</a></p>
+</div>
+<div class="citation" id="dias2021" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">Dias2021</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://pubs.acs.org/doi/10.1021/acsaem.0c03039">https://pubs.acs.org/doi/10.1021/acsaem.0c03039</a></p>
+</div>
+<div class="citation" id="salpeter1951" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">Salpeter1951</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRev.84.1232">https://doi.org/10.1103/PhysRev.84.1232</a></p>
+</div>
+<div class="citation" id="albrecht1998" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">Albrecht1998</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevLett.80.4510">https://doi.org/10.1103/PhysRevLett.80.4510</a></p>
+</div>
+<div class="citation" id="marini2008" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">Marini2008</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevLett.101.106405">https://doi.org/10.1103/PhysRevLett.101.106405</a></p>
+</div>
+<div class="citation" id="molinasnchez2016" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>MolinaSnchez2016<span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevB.93.155435">https://doi.org/10.1103/PhysRevB.93.155435</a></p>
+</div>
+<div class="citation" id="liu2020" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">Liu2020</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1038/s41598-020-71808-y">https://doi.org/10.1038/s41598-020-71808-y</a></p>
+</div>
+<div class="citation" id="odonnell1991" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">ODonnell1991</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1063/1.104723">https://doi.org/10.1063/1.104723</a></p>
+</div>
+<div class="citation" id="ridolfi2018" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">Ridolfi2018</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevB.97.205409">https://doi.org/10.1103/PhysRevB.97.205409</a></p>
+</div>
+<div class="citation" id="vantuan2018" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">VanTuan2018</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevB.98.125308">https://doi.org/10.1103/PhysRevB.98.125308</a></p>
+</div>
+<div class="citation" id="rozzi2006" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Rozzi2006<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id18">1</a>,<a role="doc-backlink" href="#id21">2</a>)</span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevB.73.205119">https://doi.org/10.1103/PhysRevB.73.205119</a></p>
+</div>
+<div class="citation" id="ismailbeigi2006" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">IsmailBeigi2006</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevB.74.233103">https://doi.org/10.1103/PhysRevB.74.233103</a></p>
+</div>
+<div class="citation" id="trolle2014" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">Trolle2014</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevB.89.235410">https://doi.org/10.1103/PhysRevB.89.235410</a></p>
+</div>
+<div class="citation" id="spataru2005" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">Spataru2005</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevLett.95.247402">https://doi.org/10.1103/PhysRevLett.95.247402</a></p>
+</div>
+<div class="citation" id="palummo2015" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">Palummo2015</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1021/nl503799t">https://doi.org/10.1021/nl503799t</a></p>
+</div>
+<div class="citation" id="monkhorst1976" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id24">Monkhorst1976</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevB.13.5188">https://doi.org/10.1103/PhysRevB.13.5188</a></p>
+</div>
+<div class="citation" id="yu2012" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Yu2012<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id26">1</a>,<a role="doc-backlink" href="#id31">2</a>,<a role="doc-backlink" href="#id32">3</a>)</span>
+<p><a class="reference external" href="https://doi.org/10.1103/PhysRevLett.108.068701">https://doi.org/10.1103/PhysRevLett.108.068701</a></p>
+</div>
+<div class="citation" id="bercx2018" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">Bercx2018</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1007/978-3-319-72374-7_15">https://doi.org/10.1007/978-3-319-72374-7_15</a></p>
+</div>
+<div class="citation" id="astm2012" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id28">Astm2012</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1520/g0173-03r20">https://doi.org/10.1520/g0173-03r20</a></p>
+</div>
+<div class="citation" id="shockley1961" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id25">Shockley1961</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1063/1.1736034">https://doi.org/10.1063/1.1736034</a></p>
+</div>
+<div class="citation" id="huldt1971" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id29">Huldt1971</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1002/pssa.2210080118">https://doi.org/10.1002/pssa.2210080118</a></p>
+</div>
+<div class="citation" id="green1984" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Green1984<span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://10.1109/T-ED.1984.21588">https://10.1109/T-ED.1984.21588</a></p>
+</div>
+<div class="citation" id="duan2019" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id33">Duan2019</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1039/C9TA06674H">https://doi.org/10.1039/C9TA06674H</a></p>
+</div>
+</div>
+</div></blockquote>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../installation/inputs.html" class="btn btn-neutral float-left" title="Input Files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../references/license/index.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Celso Ricardo C. Rego.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

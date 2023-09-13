@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  sphinx:
+    build:
+      context: ./
+      args:
+         - BRANCH=devel
+    volumes:
+      - ./docs:/simstack/docs/

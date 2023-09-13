@@ -1,0 +1,11 @@
+div.math span.math {
+    display: inline-block;
+}
+
+div.math:not(:empty)::after {
+    content: "(" attr(data-line) ")";
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 80%;
+    margin-left: 10px;
+}

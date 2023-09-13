@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Motion of a Golf Ball &mdash; WanTiBEXOS  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            WanTiBEXOS
+              <img src="../../_static/WantBx.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation &amp; Inputs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/inputs.html">Input Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/inputs.html#executable-files">Executable files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/inputs.html#wantibexos-flags">WanTiBEXOS Flags</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Formalism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html">Hamiltonian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#optical-properties">Optical properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#berry-curvature">Berry Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#bethe-salpeter-formalism">Bethe–Salpeter Formalism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#finite-temperature-bse-approach">Finite temperature BSE approach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#coulomb-potentials">Coulomb Potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#exciton-radiative-lifetime">Exciton radiative lifetime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#k-mesh-generator">k-mesh generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#solar-cell-power-conversion-efficiency">Solar Cell Power Conversion Efficiency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#references">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../references/license/index.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/citing/index.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/dev_team/index.html">Development Team</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">WanTiBEXOS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">The Motion of a Golf Ball</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/tutorials/projectile_motion/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="the-motion-of-a-golf-ball">
+<h1>The Motion of a Golf Ball<a class="headerlink" href="#the-motion-of-a-golf-ball" title="Link to this heading"></a></h1>
+<p>Usually, people, especially students, have issues with the concept that gravity is the only force acting upon an upward-moving
+projectile. Of course, gravity here refers to Newton’s theory). Their conception of motion prompts them to think that if an
+object moves in a given direction, there must be a force in that direction, e.g., if a particle moves upward and rightward,
+there must be both an upward and rightward force. Probably, they believe it is due to their intuition based on their
+daily lives, where the air resistance, often termed drag, might not be negligible. This tutorial shows the usage of
+the <strong>SimStack</strong> features to understand the importance of the air resistance effect on projectile motion.</p>
+<p>Naturally, adding the drag force in the equations for a projectile motion is not complicated, but solving them analytically for
+position and velocity as functions of time can get tricky. Fortunately, it is relatively easy to make precise and accurate numerical
+solutions using <em>Python</em>’s <a class="reference external" href="https://docs.scipy.org/doc/">Scipy</a> library.</p>
+<p>This project aims to show how the Projectile motion experienced by a Golf ball with mass <span class="math notranslate nohighlight">\(M (kg)\)</span> and
+radius <span class="math notranslate nohighlight">\(r (m)\)</span> projected near the Earth’s surface moves along a curved path under the action of gravity,
+<span class="math notranslate nohighlight">\(g=9.81 (m/s^2)\)</span> when the effects of air-resistance and lift are assumed or neglected. Beyond the physics
+problems we aim to solve, we also want to highlight the loop control features of <strong>SimStack</strong>. With these features, we will
+submit several workflows with different setups for a given simulation protocol, which might be computed in parallel using
+the <em>ForEach</em> loop control and thus get the desired physical properties.</p>
+<p>This tutorial demonstrates step-by-step through the Motion of a Golf ball project how to run and build simple
+and complex workflows. With these examples, we will learn how to iterate over parameter ranges using the
+<em>ForEach</em>  loop control. Additionally, we explain how workflows may be branched via <em>If</em> loop control.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><a class="reference external" href="https://github.com/KIT-Workflows/Motion-of-a-Golf-Ball/">Please download all the WaNos for this project here</a>.</p>
+</div>
+<section id="in-this-workflow-we-will-be-able-to">
+<h2>In this workflow, we will be able to:<a class="headerlink" href="#in-this-workflow-we-will-be-able-to" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Understanding the connection of acceleration due to gravity, range, maximum height, and trajectory properties of a projectile motion.</p></li>
+<li><p>Determine the velocity of a particle at different points in its trajectory.</p></li>
+<li><p>Apply the principle of independence of motion to solve projectile motion problems when the effects of air resistance are assumed or neglected.</p></li>
+</ul>
+</section>
+<section id="theoretical-solution">
+<h2>Theoretical Solution<a class="headerlink" href="#theoretical-solution" title="Link to this heading"></a></h2>
+<p>The proper way to model the projectile motion is to split it into two independent motions, i.e., horizontal <span class="math notranslate nohighlight">\((x)\)</span> and
+vertical <span class="math notranslate nohighlight">\((y)\)</span>. The magnitudes of the components of the velocity <span class="math notranslate nohighlight">\(V\)</span> are <span class="math notranslate nohighlight">\(V_x = V cos(\theta)\)</span>
+and <span class="math notranslate nohighlight">\(V_y = V sin(\theta)\)</span> where <span class="math notranslate nohighlight">\(V\)</span> is the magnitude of the velocity and <span class="math notranslate nohighlight">\(\theta\)</span> is its angle
+direction, as depicted in <strong>Fig 1</strong>. Gravity, air resistance, and rotation (lift) affect a golf ball’s trajectory. We
+illustrate the forces acting on the ball on the right of  <strong>Fig 2</strong>. This project will explore the following
+four scenarios: a <em>smooth ball</em>, <em>smooth ball + drag</em>, <em>golf ball + drag</em>, and <em>golf ball + drag + lift</em>.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/Figure_1.png"><img alt="../../_images/Figure_1.png" src="../../_images/Figure_1.png" style="width: 800px;" /></a>
+</figure>
+<p><strong>Fig 1</strong>  <em>The split of a projectile motion into two independent one-dimensional motions along the vertical and
+horizontal axes. The horizontal range</em> <span class="math notranslate nohighlight">\(d\)</span> <em>( the blue line) is maximum distance traveled on the</em> <span class="math notranslate nohighlight">\(x\)</span> <em>coordinate
+when it returns to its initial height</em> (<span class="math notranslate nohighlight">\(y=0\)</span>).</p>
+<ul class="simple">
+<li><p>2D General Equations</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(F_x = - F^d_x + F^l_x\)</span></p>
+<p><span class="math notranslate nohighlight">\(F_y = -F_g - F^d_x + F^l_y\)</span></p>
+<p><span class="math notranslate nohighlight">\(F_g\)</span> is the force of gravity that acts at all times on all objects near Earth.</p>
+<p>The drag force or air resistance <span class="math notranslate nohighlight">\(F^d = \frac{1}{2}\rho_f A C_D|v|^2\)</span> refers to forces acting opposite to the
+relative motion of the ball moving concerning a surrounding fluid (air in this case). Here, <span class="math notranslate nohighlight">\(C_D\)</span> is the drag
+coefficient, <span class="math notranslate nohighlight">\({\rho}\)</span> is the air density, <span class="math notranslate nohighlight">\({A}\)</span> represents the cross-sectional area  of the ball. The drag
+coefficient is not constant, it decreases as velocity increases.</p>
+<p><span class="math notranslate nohighlight">\(F^l =  \frac{1}{2}\rho_f A C_L|v|^2\)</span> is the lift force stemming from the rotation of the ball (the Magnus-effect)
+and is normal to <span class="math notranslate nohighlight">\(v\)</span>. With the given direction, the ball rotates counter-clockwise (backspin), where <span class="math notranslate nohighlight">\(C_L\)</span> is the lift coefficient.</p>
+</section>
+<section id="projectile-motion-wano">
+<h2>Projectile-motion WaNo<a class="headerlink" href="#projectile-motion-wano" title="Link to this heading"></a></h2>
+<p>The Workflow building blocks within the SimStack Workflow framework are Workflow Active Nodes (<strong>WaNos</strong>), XML
+files combined with scripts defining the expected input and output. As pointed out above, we want to understand the physics
+of a Projectile motion with or without resistance effects; for that, we built a <strong>WaNo</strong> as shown in <strong>Fig 2</strong>, where only
+the relevant parameters are exposed.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/Figure_2.png"><img alt="../../_images/Figure_2.png" src="../../_images/Figure_2.png" style="width: 800px;" /></a>
+</figure>
+<p><strong>Fig 2</strong> <em>On the left-hand side is depicted the Projectile-motion</em> <strong>WaNo</strong> <em>. Outlined in blue we expose the most relevant
+physical parameters of the projectile motion problem. On the right-hand side, we depict some of the possible forces acting on the golf ball.</em></p>
+<section id="python-dependencies">
+<h3>1. Python dependencies<a class="headerlink" href="#python-dependencies" title="Link to this heading"></a></h3>
+<p>To get this workflow up-running on your available computational resources, have the below libraries installed on Python 3.6 or newer.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">os</span></code>, <code class="docutils literal notranslate"><span class="pre">sys</span></code>, <code class="docutils literal notranslate"><span class="pre">csv</span></code>, <code class="docutils literal notranslate"><span class="pre">yaml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p></li>
+</ul>
+</section>
+<section id="inputs-parameters-with-multipleof-feature">
+<h3>2. Inputs parameters with <strong>MultipleOf</strong> feature<a class="headerlink" href="#inputs-parameters-with-multipleof-feature" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>variable type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">System</span></code></p></td>
+<td><p><em>Boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x0(m)</span></code></p></td>
+<td><p><em>Float</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">y0(m)</span></code></p></td>
+<td><p><em>Float</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">v0(m/s)</span></code></p></td>
+<td><p><em>Float</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Mass</span> <span class="pre">(kg)</span></code></p></td>
+<td><p><em>Float</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Angle(°)</span></code></p></td>
+<td><p><em>Float</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Radius(m)</span></code></p></td>
+<td><p><em>Float</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">label</span></code></p></td>
+<td><p><em>String</em></p></td>
+</tr>
+</tbody>
+</table>
+<p>The list above displays the Projectile-motion <strong>WaNo</strong> parameters with variable types
+and physical units. Here, <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(y_0\)</span> are the initial positions of the projectile in the
+horizontal and vertical axes. <span class="math notranslate nohighlight">\(v_0\)</span> is the initial velocity. <span class="math notranslate nohighlight">\(Mass\)</span> is the ball’s mass with a
+given Radius, and the label variable is a string to assign the chosen set of the variables. The <em>System</em>
+flag adds the desired scenario, and the equations of motion are solved numerically using the <code class="docutils literal notranslate"><span class="pre">solve_ip</span></code>
+from <code class="docutils literal notranslate"><span class="pre">scipy</span></code> library.</p>
+<p>The set of the exposed parameters in this <strong>WaNo</strong> allows us to change the python script’s inputs without
+opening it. The outcomes follow the numerical solutions for the projectile motion within the chosen scenario.</p>
+</section>
+<section id="outputs">
+<h3>3. Outputs<a class="headerlink" href="#outputs" title="Link to this heading"></a></h3>
+<p>This <strong>WaNo</strong> will generate  <code class="docutils literal notranslate"><span class="pre">`</span> <span class="pre">PROJOUT.yml`</span></code> and <code class="docutils literal notranslate"><span class="pre">`PROJDATA.yml`</span></code> files. The table below
+shows the keys contained in each one, and later on, we will use these keys to inquire about their values.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>PROJOUT.yml</p></th>
+<th class="head"><p>PROJDATA.yml</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><cite>xmax</cite> maximum range</p></td>
+<td><p><span class="math notranslate nohighlight">\(x\)</span> position</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>ymax</cite> maximum height</p></td>
+<td><p><span class="math notranslate nohighlight">\(y\)</span> position</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>time to target</cite></p></td>
+<td><p><span class="math notranslate nohighlight">\(vx\)</span> velocity</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>time to highest point</cite></p></td>
+<td><p><span class="math notranslate nohighlight">\(vy\)</span> velocity</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>Step ii</cite> label</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="auxiliary-wanos">
+<h3>4. Auxiliary WaNos<a class="headerlink" href="#auxiliary-wanos" title="Link to this heading"></a></h3>
+<p>The Auxiliary <strong>WaNos</strong> set will be intensively used and reused in all upcoming workflows. They
+will be responsible for managing the outcome data. As shown in <strong>Fig 3</strong>, <code class="docutils literal notranslate"><span class="pre">Mult-It</span></code>, <code class="docutils literal notranslate"><span class="pre">Plot-Figures</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">Table-Generator</span></code> will pass a variable at the beginning of the workflow and request the variable’s
+properties of a table file and plot figures.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Mult-It</span></code> creates a Float or integer list, which will pass to the Projectile-motion <strong>WaNo</strong> inside the <em>ForEach</em> loop control, explained in the next step.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Table-Generator</span></code> <strong>WaNo</strong> generates table files in a <code class="docutils literal notranslate"><span class="pre">csv</span></code> and <code class="docutils literal notranslate"><span class="pre">yml</span></code> formats for a given set of variables inquired from a loaded file.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Plot-Figures</span></code> <strong>WaNo</strong> will make a plot of the inquired data. This <strong>WaNo</strong> allows us to switch between <em>Same-graph</em>
+(plot several curves in the same figure) and  <em>Subplot</em> modes (plot each curve in a different subplot ).</p></li>
+</ul>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/Figure_3.png"><img alt="../../_images/Figure_3.png" src="../../_images/Figure_3.png" style="width: 800px;" /></a>
+</figure>
+<p><strong>Fig 3</strong> <em>The upper two panels exhibit the Float and Int modes available on the</em> <code class="docutils literal notranslate"><span class="pre">Mult-It</span></code> <strong>WaNo</strong> <em>. The below two
+panels display the Same-graph and Subplot modes. Each mode in this</em> <strong>WaNo</strong> <em>allows us to inquire about the variables
+from Projectile-motion and plot them.</em></p>
+<p>The outputs of the <strong>WaNo</strong> <code class="docutils literal notranslate"><span class="pre">Plot-Figures</span></code> in <strong>Fig 3</strong> might be <em>Plot-Figure.png</em>  and <em>Plot-subplot.png</em> . Click
+on <strong>Fig 3</strong> to see more details about their inputs.</p>
+</section>
+</section>
+<section id="workflow-with-projectile-motion-and-plot-figures-wanos">
+<h2>Workflow with <em>Projectile-motion</em> and <em>Plot-Figures</em> <strong>WaNos</strong><a class="headerlink" href="#workflow-with-projectile-motion-and-plot-figures-wanos" title="Link to this heading"></a></h2>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/Figure_4.png"><img alt="../../_images/Figure_4.png" src="../../_images/Figure_4.png" style="width: 800px;" /></a>
+</figure>
+<p><strong>Fig 4</strong> <em>The workflow above is composed of</em> <code class="docutils literal notranslate"><span class="pre">Projectile-motion``*,</span> <span class="pre">and*</span> <span class="pre">``Plot-Figures</span></code>
+<strong>WaNos</strong> <em>. Step 3 shows the figure as one of the possible outputs of this workflow.</em></p>
+<p><strong>Fig 4</strong> shows the workflow named as <em>Proj-motion</em>, which compares the drag effect acting on a smooth ball.</p>
+<section id="running-this-workflow">
+<h3>5. Running this Workflow<a class="headerlink" href="#running-this-workflow" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Drag and drop the <em>Proj-motion</em> <strong>WaNo</strong> from the top left menu to the SimStack canvas as pointed by the blue arrow on panel <strong>Step 1</strong> in <strong>Fig 4</strong>.</p></li>
+<li><p>In this case, we set the Angle parameter to <span class="math notranslate nohighlight">\(25(°)\)</span> for two different System scenarios (<em>smooth ball</em> and <em>smooth ball + drag</em> ), and we kept the other parameters as their default values.</p></li>
+<li><p>Repeat Step 1 for auxiliary <em>Plot-Figures</em> <strong>WaNo</strong> connecting it below the <em>Proj-motion</em>. Load the <code class="docutils literal notranslate"><span class="pre">PROJOUT.yml</span></code> file field in the <em>Input-File</em> field, then click on the option <em>Same-graph</em>, the click will trigger the options to be filled. In this case, you should set the title, labels, and variables (data), which will show up in the output figure.</p></li>
+<li><p>Name your workflow with <code class="docutils literal notranslate"><span class="pre">Ctrl+S</span></code>, and run it with <code class="docutils literal notranslate"><span class="pre">Ctrl+R</span></code> command.</p></li>
+<li><p>The <strong>Step 3</strong> of <strong>Fig 4</strong> shows that by choosing the <code class="docutils literal notranslate"><span class="pre">Browser</span> <span class="pre">Directory</span></code> with a double click in the green folder (Jobs &amp; Workflows tab) of the workflow, you will click on <em>Plot-Figure.png</em> and see the figure comparing the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates of the smooth ball under or not of air resistance effect.</p></li>
+</ul>
+</section>
+</section>
+<section id="a-slightly-complex-workflow-using-the-foreach-feature">
+<h2>A slightly complex workflow using the <strong>ForEach</strong> feature<a class="headerlink" href="#a-slightly-complex-workflow-using-the-foreach-feature" title="Link to this heading"></a></h2>
+<p>In this <strong>Workflow</strong>, we want to explore the scenario where the system under study has multiple initial
+velocities (<span class="math notranslate nohighlight">\(v_0\)</span>) values, and we want to investigate the dependence of maximum height <span class="math notranslate nohighlight">\(ymax\)</span>
+and <em>time to target</em> variables in terms of maximum range <span class="math notranslate nohighlight">\(xmax\)</span>. For this example, the chosen
+system is <em>golf ball + drag + lift</em>.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/Figure_5.png"><img alt="../../_images/Figure_5.png" src="../../_images/Figure_5.png" style="width: 800px;" /></a>
+</figure>
+<p><strong>Fig 5</strong> <em>shows the workflow, a workflow composed of four</em> <strong>WaNos</strong> <em>and the</em> <strong>ForEach</strong> <em>loop control. The
+black arrows refer to the input parameters of each</em> <strong>WaNo</strong>. <em>The red arrow in</em> <strong>Step 1</strong> <em>shows how to fill
+the field responsible for passing the list of values from</em> <code class="docutils literal notranslate"><span class="pre">Mult-It</span></code> <strong>WaNo</strong> <em>to the</em> <strong>ForEach</strong>. <em>The red arrow in</em>
+<strong>Step 3</strong> <em>points out the assignment of the ForEach-Iterator to the initial velocity (</em><span class="math notranslate nohighlight">\(v_0`*) variable. The red
+arrow in* **Step 5** *shows the path to import all the files* ``PROJOUT.yml`\)</span> <em>of each initial velocity value. The
+last red arrow in</em> <strong>Step 6</strong> <em>indicates the tab where we must browser to access the Plot-subplot.png figure.</em></p>
+<section id="id1">
+<h3>6. Running this Workflow<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Drag and drop the <em>Mult-It</em> <strong>WaNo</strong> from the top left menu to the SimStack canvas as pointed by the black arrow on panel <strong>Step 1</strong> in <strong>Fig 5</strong>. There are 20 different values for initial velocity in this scenario, varying from 20 to 70 (m/s).</p></li>
+<li><p>Drag and drop the <em>ForEach</em> loop control below right and insert the <em>Projectile-motion</em> <strong>WaNo</strong> inside it. In the sequence, assign the <code class="docutils literal notranslate"><span class="pre">${ForEach-Iterator}</span></code> according to the <strong>Step 3</strong> of <strong>Fig 5</strong>.</p></li>
+<li><p>Drag and drop the <em>Table-Generator</em> <strong>WaNo</strong> from the top left menu to the SimStack below to <em>ForEach</em> loop control. Fill up the fields of <em>Table-Generator</em> as shown in <strong>Step 4</strong> of <strong>Fig 5</strong>. You should also import the files from where the information will be extracted, in this case, <code class="docutils literal notranslate"><span class="pre">PROJOUT.yml</span></code> as depicted in <strong>Step 5</strong>.</p></li>
+<li><p>Drag and drop the <em>Plot-Figures</em> <strong>WaNo</strong> from the top left menu to the SimStack below to <em>Table-Generator</em>, click on the option <em>Subplot</em>. In this case, you should set the title, labels, and variables (data), which will appear in the output figure. Fill the fields according to <strong>Step 6</strong> of <strong>Fig 5</strong>.</p></li>
+<li><p>Name your workflow with <cite>Ctrl+S</cite>, and run it with <cite>Ctrl+R</cite> command.</p></li>
+<li><p>The last step in <strong>Fig 5</strong> shows that by choosing the <code class="docutils literal notranslate"><span class="pre">Browser</span> <span class="pre">Directory</span></code> with a double click in the green folder (Jobs &amp; Workflows tab) of the workflow, you will be able to click on <em>Plot-subplot.png</em> and see the subplots comparing the dependence of maximum height <code class="docutils literal notranslate"><span class="pre">ymax</span></code> and <em>time to target</em> variables in terms of maximum range <code class="docutils literal notranslate"><span class="pre">xmax</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="branched-workflows-using-the-if-feature">
+<h2>Branched Workflows using the <strong>If</strong> feature<a class="headerlink" href="#branched-workflows-using-the-if-feature" title="Link to this heading"></a></h2>
+<p>This part will explain preventing unphysical results using the <strong>If</strong> loop control, which branches the
+workflow. In the Projectile-motion <strong>WaNo</strong> the options <cite>golf ball + drag</cite> and <cite>golf ball + drag + lift</cite> in the <cite>System</cite>
+field are only valid for initial velocities <span class="math notranslate nohighlight">\(v0(m/s)\)</span> between <span class="math notranslate nohighlight">\(13.7\)</span> and <span class="math notranslate nohighlight">\(88.1 m/s\)</span>. This constraint
+occurs due to the dependence of the drag and the lift coefficients, which are functions of the initial velocities
+and the golf ball spinning. In this case, we are keeping the spin constant. Then only the velocity will be considered.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/Figure_6.png"><img alt="../../_images/Figure_6.png" src="../../_images/Figure_6.png" style="width: 800px;" /></a>
+</figure>
+<p><strong>Fig 6</strong> <em>shows a branched workflow, which prevents unphysical results for a specific variable. The black arrows in both steps point from the variable</em> <span class="math notranslate nohighlight">\(val_v0\)</span> <em>value to two different scenarios inside the</em> <strong>If</strong> <em>loop control.</em></p>
+<p><strong>Fig 6</strong> exhibits the outcomes from this example. The workflow left and right sides display two possible scenarios for this case. (1) runs the workflow composed of the <em>Projectile-motion</em> and <em>Plot-Figures</em> or runs <em>Stop</em> <strong>WaNo</strong>, which prints a message on the <code class="docutils literal notranslate"><span class="pre">Stop-msg</span></code> file.</p>
+<section id="id2">
+<h3>7. Running this Workflow<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Drag and drop the <em>Variable</em> control from the bottom left menu to the SimStack canvas and setup it as shows <strong>Fig 6</strong>.</p></li>
+<li><p>Drag and drop the <em>If</em> control bottom left menu and insert on the left-hand side the workflow composed by the <em>Projectila-motion</em> and Plot-Figures <strong>WaNos</strong>. Next, we make the appropriate setup for them. If this part is true, it must generate the expected output files for each <strong>WaNo</strong> as explained in section <strong>5</strong>.</p></li>
+<li><p>Drag and drop the auxiliary <em>Stop</em> <strong>WaNo</strong> from the bottom left menu inside the right side of the <em>If</em> loop control. If this part is true, it must generate the <cite>Stop-msg</cite> file.</p></li>
+<li><p>Name your workflow with <code class="docutils literal notranslate"><span class="pre">Ctrl+S</span></code>, and running it with <code class="docutils literal notranslate"><span class="pre">Ctrl+R</span></code> command.</p></li>
+<li><p>A double click in the green folder (Jobs &amp; Workflows tab) of the workflow will allow us to check the outputs according to the chosen <em>if</em> condition.</p></li>
+</ul>
+</section>
+</section>
+<section id="final-remarks">
+<h2>Final Remarks<a class="headerlink" href="#final-remarks" title="Link to this heading"></a></h2>
+<p>Running this project within SimStack saves time and avoids adding more code lines to our python script. For instance, to
+get the figure in <strong>Step 6</strong>, we would have to add a <em>for</em> loop in the python script to be executed in a serial
+version unless you want to make an additional effort to parallelize this task. On the other hand, <strong>SimStack</strong>
+promptly parallelize the jobs by running them onto the available computational resources. If we can leverage
+this advantage in a simple case, imagine how much time you can save for a more complex workflow involving
+different codes designed to simulate systems on different scales.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Celso Ricardo C. Rego.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Incorporating a new WaNo &mdash; WanTiBEXOS  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            WanTiBEXOS
+              <img src="../../_static/WantBx.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation &amp; Inputs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/inputs.html">Input Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/inputs.html#executable-files">Executable files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/inputs.html#wantibexos-flags">WanTiBEXOS Flags</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Formalism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html">Hamiltonian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#optical-properties">Optical properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#berry-curvature">Berry Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#bethe-salpeter-formalism">Bethe–Salpeter Formalism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#finite-temperature-bse-approach">Finite temperature BSE approach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#coulomb-potentials">Coulomb Potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#exciton-radiative-lifetime">Exciton radiative lifetime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#k-mesh-generator">k-mesh generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#solar-cell-power-conversion-efficiency">Solar Cell Power Conversion Efficiency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theoretical_background/formalism.html#references">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../references/license/index.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/citing/index.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/dev_team/index.html">Development Team</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">WanTiBEXOS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Incorporating a new WaNo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/development/incorprating/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="incorporating-a-new-wano">
+<h1>Incorporating a new WaNo<a class="headerlink" href="#incorporating-a-new-wano" title="Link to this heading"></a></h1>
+<style> .green {color:green} </style><p>Scientific studies are often obtained by chaining the preparation and execution of multiple interoperable packages
+one after the other. The scientific process requires the reproducibility of this simulation chain and the reproducibility
+of the singular modules. Here we show how to incorporate a new <strong>WaNo</strong> within in <strong>SimStack</strong> framework, including
+its Graphical User Interface (GUI), parameters, and execution process.</p>
+<section id="wano-concept">
+<h2>1. WaNo concept<a class="headerlink" href="#wano-concept" title="Link to this heading"></a></h2>
+<p>The Workflow Active Nodes <strong>WaNo</strong> is specified in an <code class="docutils literal notranslate"><span class="pre">XML</span></code> file, which <strong>SimStack</strong> interprets and uses to render
+the information of the node from the local machine to the HPC resources. It eases the adjustment of input parameters
+and files and is displayed on the right side of the client window, as shown in the last figure of the <strong>Installation</strong>
+section. In the code lines below, we highlight in yellow the five possible fields. The absence of the first one will
+not raise any execution error, but the remaining are mandatory for any implemented <strong>WaNo</strong>.</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">&lt;WaNoTemplate&gt;</span>
+<span class="hll"><span class="linenos"> 2</span><span class="w">   </span><span class="nt">&lt;WaNoMeta&gt;</span>
+</span><span class="linenos"> 3</span><span class="w">      </span><span class="nt">&lt;Author&gt;</span>
+<span class="linenos"> 4</span><span class="w">        </span><span class="nt">&lt;Name&gt;</span><span class="w"> </span>Celso<span class="w"> </span>R.<span class="w"> </span>C.<span class="w"> </span>Rego<span class="w"> </span><span class="nt">&lt;/Name&gt;</span>
+<span class="linenos"> 5</span><span class="w">        </span><span class="nt">&lt;Email&gt;</span>celsorego@kit.edu<span class="nt">&lt;/Email&gt;</span>
+<span class="linenos"> 6</span><span class="w">      </span><span class="nt">&lt;/Author&gt;</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="nt">&lt;Description&gt;</span>
+<span class="linenos"> 9</span><span class="w">        </span>This<span class="w"> </span>WaNo<span class="w"> </span>performs<span class="w"> </span>...
+<span class="linenos">10</span><span class="w">      </span><span class="nt">&lt;/Description&gt;</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="w">      </span><span class="nt">&lt;Keyword&gt;</span>Some<span class="w"> </span>nice<span class="w"> </span>words<span class="nt">&lt;/Keyword&gt;</span>
+<span class="hll"><span class="linenos">13</span><span class="w">   </span><span class="nt">&lt;/WaNoMeta&gt;</span>
+</span><span class="linenos">14</span>
+<span class="hll"><span class="linenos">15</span><span class="w">   </span><span class="nt">&lt;WaNoRoot</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;TemplateWaNo&quot;</span><span class="nt">&gt;</span>
+</span><span class="linenos">16</span><span class="w">       </span>Load<span class="w"> </span>the<span class="w"> </span>input<span class="w"> </span>files<span class="w"> </span>from<span class="w"> </span>a<span class="w"> </span>given<span class="w"> </span>folder
+<span class="linenos">17</span><span class="w">       </span>Define<span class="w"> </span>a<span class="w"> </span>set<span class="w"> </span>of<span class="w"> </span>parameters
+<span class="hll"><span class="linenos">18</span><span class="w">   </span><span class="nt">&lt;/WaNoRoot&gt;</span>
+</span><span class="linenos">19</span>
+<span class="hll"><span class="linenos">20</span><span class="w">   </span><span class="nt">&lt;WaNoExecCommand&gt;</span>
+</span><span class="linenos">21</span><span class="w">       </span>Run<span class="w"> </span>the<span class="w"> </span>simulation
+<span class="hll"><span class="linenos">22</span><span class="w">   </span><span class="nt">&lt;/WaNoExecCommand&gt;</span>
+</span><span class="linenos">23</span>
+<span class="hll"><span class="linenos">24</span><span class="w">   </span><span class="nt">&lt;WaNoInputFiles&gt;</span>
+</span><span class="linenos">25</span><span class="w">       </span>Name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>mandatory<span class="w"> </span>files,<span class="w"> </span>e.g.,<span class="w"> </span>scripts.
+<span class="hll"><span class="linenos">26</span><span class="w">   </span><span class="nt">&lt;/WaNoInputFiles&gt;</span>
+</span><span class="linenos">27</span>
+<span class="hll"><span class="linenos">28</span><span class="w">   </span><span class="nt">&lt;WaNoOutputFiles&gt;</span>
+</span><span class="linenos">29</span><span class="w">       </span>Define<span class="w"> </span>the<span class="w"> </span>expected<span class="w"> </span>output<span class="w"> </span>files
+<span class="hll"><span class="linenos">30</span><span class="w">   </span><span class="nt">&lt;/WaNoOutputFiles&gt;</span>
+</span><span class="linenos">31</span><span class="nt">&lt;/WaNoTemplate&gt;</span>
+</pre></div>
+</div>
+<p>Every element is required to have a name attribute. This name cannot contain “.” characters. Below
+we give an overview of the meaning for each element inside the <code class="docutils literal notranslate"><span class="pre">WaNoTemplate</span></code> in the <code class="docutils literal notranslate"><span class="pre">XML</span></code> file above.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">WaNoMeta</span></code> This field is dedicated to the developer information and describes the aims of the <strong>WaNo</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WaNoRoot</span></code> Here is where we define the set of parameters to be exposed and the inputs files of the simulation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WaNoExecCommand</span></code> This part is a multiline string, which contains the script or program to execute, when the <strong>WaNo</strong> starts.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WaNoInputFiles</span></code> This segment is where we name all static input files, which have to be present in the <strong>WaNo</strong> folder.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WaNoOutputFiles</span></code> Here is where we name all the expected output files in the output directory. If not
+present, your <strong>WaNo</strong> will be shown as aborted (red folder).</p></li>
+</ul>
+</section>
+<section id="morse-potential-example">
+<h2>2. Morse potential example<a class="headerlink" href="#morse-potential-example" title="Link to this heading"></a></h2>
+<p>In this example, we want to include a python program in a new <strong>WaNo</strong>. This script computes the <a class="reference external" href="https://en.wikipedia.org/wiki/Morse_potential">Morse potential</a>
+<span class="math notranslate nohighlight">\(V(r)=D_{e}[1-e^{-a(r-r_{e})}]^2-D_{e}\)</span> energy of  a particular diatomic molecule as a function of the intermolecular distance
+<span class="math notranslate nohighlight">\((r-r_{e})\)</span> using  <a class="reference external" href="https://numpy.org/">Numpy</a>. Here <span class="green">De</span> is the well depth energy relative to the atoms apart from each
+other. <span class="green">a</span> controls the width of the potential, <span class="math notranslate nohighlight">\(\color{green}{r_{e}}\)</span> gives the minimum potential distance. This
+scrip loads <code class="docutils literal notranslate"><span class="pre">.yml</span></code> file from where it reads the inputs to compute the Morse potential energy. Via the command line, it is executed as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python/intepretor<span class="w"> </span>morse.py
+</pre></div>
+</div>
+<section id="starting-a-new-wano-project">
+<h3>2.1 Starting a new <strong>WaNo</strong> project<a class="headerlink" href="#starting-a-new-wano-project" title="Link to this heading"></a></h3>
+<p>At this point, we want to move from the code line above to a <strong>SimStack</strong> GUI. To incorporate a new tool, first, we create a new directory
+with the <strong>WaNo</strong> name (see the code lines below) in the <strong>WaNo</strong> repository directory, see Paths configuration in <span class="xref std std-ref">Configuration</span>
+section. The <strong>WaNo</strong> name should be unique. In our example, we name it as <em>MORSE-pot</em>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>Morse-Pot
+<span class="nb">cd</span><span class="w"> </span>Morse-pot
+</pre></div>
+</div>
+<p>Next, we create a <em>Morse-pot.xml</em> file, and this will specify the GUI elements in this <strong>WaNo</strong>. To give our new <strong>WaNo</strong> an
+icon image, we may add an image <em>Morse-pot.png</em> directly in the <strong>WaNo</strong> folder. In such a way, the <strong>SimStack</strong> client will
+automatically load this image on the node’s area. Now, we have to consider what aspect in this simulation project we want to
+emphasize, which parameters should be fixed, which are adjustable. For this particular case, we make all Morse potential parameters
+flexible. Still, we think of Density Functional Theory, Molecular Dynamics, or Continues model codes, where we have many
+parameters, which in principle, we are allowed to change. In a scenario of codes with a considerable number of parameters, exposing
+all of them in most cases is unnecessary and not recommended. In this situation, we should focus only on the most relevant ones
+for the problems we want to simulate.</p>
+<p>The python script here named <em>morse.py</em> accepts arguments to define the Morse potential shape and specify inter-molecular
+distance. The outputs are written in the <code class="docutils literal notranslate"><span class="pre">MOROUT.yml</span></code> file. For more details, see the code lines below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">yaml</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">Vmorse</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">De</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">re</span><span class="p">):</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the Morse potential, V(r).</span>
+<span class="linenos"> 6</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 7</span>    <span class="k">return</span> <span class="n">De</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">re</span><span class="p">)))</span><span class="o">**</span><span class="mf">2.0</span> <span class="o">-</span> <span class="n">De</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">11</span>    
+<span class="linenos">12</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;rendered_wano.yml&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<span class="linenos">13</span>        <span class="n">wano_file</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">full_load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span>    <span class="n">decimal_points</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1"># decimal points</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>    <span class="n">De</span> <span class="o">=</span> <span class="n">wano_file</span><span class="p">[</span><span class="s2">&quot;De (Ry)&quot;</span><span class="p">]</span> <span class="c1">#0.48 #Ry</span>
+<span class="linenos">18</span>    <span class="n">a</span> <span class="o">=</span>  <span class="n">wano_file</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="c1">#1.8 </span>
+<span class="linenos">19</span>    <span class="n">re</span> <span class="o">=</span> <span class="n">wano_file</span><span class="p">[</span><span class="s2">&quot;re (A)&quot;</span><span class="p">]</span> <span class="c1">#0.8 #Angs</span>
+<span class="linenos">20</span>    <span class="n">r</span> <span class="o">=</span> <span class="n">wano_file</span><span class="p">[</span><span class="s2">&quot;Mol_distance (A)&quot;</span><span class="p">]</span>  <span class="c1">#0.4 #Angs</span>
+<span class="linenos">21</span>    
+<span class="linenos">22</span>    <span class="c1"># get morse potential energy</span>
+<span class="linenos">23</span>    <span class="n">ymorse</span> <span class="o">=</span> <span class="n">Vmorse</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">De</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">re</span><span class="p">)</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>    <span class="n">MOROUT</span> <span class="o">=</span> <span class="n">wano_file</span>  <span class="c1"># output file</span>
+<span class="linenos">26</span>    
+<span class="linenos">27</span>    <span class="n">MOROUT</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">ymorse</span><span class="p">,</span><span class="n">decimal_points</span><span class="p">))</span>
+<span class="linenos">28</span>    <span class="k">try</span><span class="p">:</span>   
+<span class="linenos">29</span>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;MOROUT.yml&quot;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out</span><span class="p">:</span>
+<span class="linenos">30</span>            <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">MOROUT</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span><span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">31</span>    <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+<span class="linenos">32</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I/O error&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To get this <code class="docutils literal notranslate"><span class="pre">.py</span></code> file up running and take advantage of the GUI with the chosen parameters highlighted in yellow
+below, we must put the script inside the <code class="docutils literal notranslate"><span class="pre">WaNoInputFile</span></code> tag, lines 31-33.</p>
+<div class="highlight-XML notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">&lt;WaNoTemplate&gt;</span>
+<span class="linenos"> 2</span><span class="w">    </span>
+<span class="linenos"> 3</span><span class="w">    </span><span class="nt">&lt;WaNoMeta&gt;</span>
+<span class="linenos"> 4</span><span class="w"> 		</span><span class="nt">&lt;Author&gt;</span>
+<span class="linenos"> 5</span><span class="w">  			</span><span class="nt">&lt;Name&gt;</span><span class="w"> </span>Celso<span class="w"> </span>R.<span class="w"> </span>C.<span class="w"> </span>Rego<span class="w"> </span><span class="nt">&lt;/Name&gt;</span>
+<span class="linenos"> 6</span><span class="w">  			</span><span class="nt">&lt;Email&gt;</span>celsorego@kit.edu<span class="nt">&lt;/Email&gt;</span>
+<span class="linenos"> 7</span><span class="w"> 		</span><span class="nt">&lt;/Author&gt;</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="w">		</span><span class="nt">&lt;Description&gt;</span>
+<span class="linenos">10</span><span class="w">   			</span>This<span class="w"> </span>WaNo<span class="w"> </span>perform<span class="w"> </span>a<span class="w"> </span>plot<span class="w"> </span>of<span class="w"> </span>Morse<span class="w"> </span>potential<span class="w"> </span>for<span class="w"> </span>H2<span class="w"> </span>molecule.
+<span class="linenos">11</span><span class="w"> 		</span><span class="nt">&lt;/Description&gt;</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="w"> 		</span><span class="nt">&lt;Keyword&gt;</span>Morse-pot<span class="nt">&lt;/Keyword&gt;</span>
+<span class="linenos">14</span><span class="w">	</span><span class="nt">&lt;/WaNoMeta&gt;</span>
+<span class="linenos">15</span><span class="w">	</span>
+<span class="linenos">16</span><span class="w">	</span><span class="nt">&lt;WaNoRoot</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;MORSE-pot&quot;</span><span class="nt">&gt;</span>
+<span class="linenos">17</span>
+<span class="hll"><span class="linenos">18</span><span class="w">	</span><span class="nt">&lt;WaNoFloat</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;De (Ry)&quot;</span><span class="w"> </span><span class="na">description =</span><span class="w"> </span><span class="s">&quot;The well depth (defined relative to the dissociated atoms)&quot;</span><span class="nt">&gt;</span>0.48<span class="nt">&lt;/WaNoFloat&gt;</span>
+</span><span class="hll"><span class="linenos">19</span><span class="w">	</span><span class="nt">&lt;WaNoFloat</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="na">description =</span><span class="w"> </span><span class="s">&quot;Controls the width of the potential (the smaller a is, the larger the well)&quot;</span><span class="w"> </span><span class="nt">&gt;</span>1.8<span class="nt">&lt;/WaNoFloat&gt;</span>
+</span><span class="hll"><span class="linenos">20</span><span class="w">	</span><span class="nt">&lt;WaNoFloat</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;re (A)&quot;</span><span class="w"> </span><span class="na">description =</span><span class="w"> </span><span class="s">&quot;The equilibrium bond distance&quot;</span><span class="nt">&gt;</span>0.8<span class="nt">&lt;/WaNoFloat&gt;</span>
+</span><span class="hll"><span class="linenos">21</span><span class="w">	</span><span class="nt">&lt;WaNoFloat</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Mol_distance (A)&quot;</span><span class="w"> </span><span class="na">description =</span><span class="w"> </span><span class="s">&quot;Distance between the atoms&quot;</span><span class="w"> </span><span class="nt">&gt;</span>1.0<span class="nt">&lt;/WaNoFloat&gt;</span>
+</span><span class="linenos">22</span><span class="w">	</span>
+<span class="linenos">23</span><span class="w">	</span><span class="nt">&lt;/WaNoRoot&gt;</span>
+<span class="linenos">24</span><span class="w">	</span>
+<span class="linenos">25</span><span class="w">	</span><span class="nt">&lt;WaNoExecCommand&gt;</span>
+<span class="linenos">26</span><span class="w">		</span>export<span class="w"> </span>NANOVER=V4
+<span class="linenos">27</span><span class="w">		</span>source<span class="w"> </span>$NANOMATCH/$NANOVER/configs/simstack_kit.config
+<span class="linenos">28</span><span class="w">		</span>python<span class="w"> </span>morse.py
+<span class="linenos">29</span><span class="w">	</span><span class="nt">&lt;/WaNoExecCommand&gt;</span>
+<span class="linenos">30</span><span class="w">	</span>
+<span class="linenos">31</span><span class="w">	</span><span class="nt">&lt;WaNoInputFiles&gt;</span>
+<span class="linenos">32</span><span class="w">		</span><span class="nt">&lt;WaNoInputFile</span><span class="w"> </span><span class="na">logical_filename=</span><span class="s">&quot;morse.py&quot;</span><span class="nt">&gt;</span>morse.py<span class="nt">&lt;/WaNoInputFile&gt;</span>
+<span class="linenos">33</span><span class="w">	</span><span class="nt">&lt;/WaNoInputFiles&gt;</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span><span class="w">	</span><span class="nt">&lt;WaNoOutputFiles&gt;</span>
+<span class="linenos">36</span><span class="w">		</span><span class="nt">&lt;WaNoOutputFile&gt;</span>MOROUT.yml<span class="nt">&lt;/WaNoOutputFile&gt;</span>
+<span class="linenos">37</span><span class="w">	</span><span class="nt">&lt;/WaNoOutputFiles&gt;</span>
+<span class="linenos">38</span><span class="nt">&lt;/WaNoTemplate&gt;</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/wano_edit.png"><img alt="../../_images/wano_edit.png" src="../../_images/wano_edit.png" style="width: 800px;" /></a>
+</figure>
+<p><strong>Fig 1</strong> The arrows show the correspondence between the exposed parameter set in the GUI with the <code class="docutils literal notranslate"><span class="pre">.xml</span></code> tags.</p>
+<ul class="simple">
+<li><p>The <em>logical_filename</em> property in line 32 maps out the input file into the file name when transferred to the <strong>SimStack</strong> server.</p></li>
+<li><p>As mentioned above, <code class="docutils literal notranslate"><span class="pre">MOROUT.yml</span></code> is the expected output file of the script, and in the <code class="docutils literal notranslate"><span class="pre">.xml</span></code> files, it is managed by lines 35-37</p></li>
+<li><p>Regarding the adjustable parameters, we add them inside the <code class="docutils literal notranslate"><span class="pre">WaNoRoot</span></code> tag as shown in <strong>Fig 1</strong> and highlighted in the <code class="docutils literal notranslate"><span class="pre">.py</span></code> file.</p></li>
+<li><p>These parameters basically set up the shape of the Morse potential. Every parameter comes with its description.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Celso Ricardo C. Rego.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

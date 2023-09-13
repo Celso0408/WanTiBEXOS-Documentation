@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Input Files &mdash; WanTiBEXOS  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hamiltonian" href="../theoretical_background/formalism.html" />
+    <link rel="prev" title="Installation" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            WanTiBEXOS
+              <img src="../_static/WantBx.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation &amp; Inputs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Input Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#executable-files">Executable files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#wantibexos-flags">WanTiBEXOS Flags</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Formalism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../theoretical_background/formalism.html">Hamiltonian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theoretical_background/formalism.html#optical-properties">Optical properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theoretical_background/formalism.html#berry-curvature">Berry Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theoretical_background/formalism.html#bethe-salpeter-formalism">Bethe–Salpeter Formalism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theoretical_background/formalism.html#finite-temperature-bse-approach">Finite temperature BSE approach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theoretical_background/formalism.html#coulomb-potentials">Coulomb Potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theoretical_background/formalism.html#exciton-radiative-lifetime">Exciton radiative lifetime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theoretical_background/formalism.html#k-mesh-generator">k-mesh generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theoretical_background/formalism.html#solar-cell-power-conversion-efficiency">Solar Cell Power Conversion Efficiency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theoretical_background/formalism.html#references">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/license/index.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/citing/index.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/dev_team/index.html">Development Team</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">WanTiBEXOS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Input Files</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/installation/inputs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="input-files">
+<h1>Input Files<a class="headerlink" href="#input-files" title="Link to this heading"></a></h1>
+<style> .red {color: red !important} </style>
+<style> .green {color: green !important} </style><p>To run <strong>WanTiBEXOS</strong>, you’ll need the main input file that specifies the names of
+the other input files. Here’s an example of what that main input file might look like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">NTHREADS</span><span class="o">=</span><span class="w"> </span><span class="m">16</span>
+<span class="nv">SYSDIM</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;2D&quot;</span>
+<span class="nv">DFT</span><span class="o">=</span><span class="w"> </span>V
+<span class="nv">BANDS</span><span class="o">=</span><span class="w"> </span>T
+<span class="nv">BSE</span><span class="o">=</span><span class="w"> </span>T
+<span class="nv">DTDIAG</span><span class="o">=</span><span class="w"> </span>T
+<span class="nv">CPOL</span><span class="o">=</span><span class="w"> </span>T
+<span class="nv">BSE_BND</span><span class="o">=</span><span class="w"> </span>T
+<span class="nv">SPEC</span><span class="o">=</span><span class="w"> </span>T
+<span class="nv">PP_ONLY</span><span class="o">=</span><span class="w"> </span>F
+<span class="nv">TMCOEF</span><span class="o">=</span><span class="w"> </span>T
+<span class="nv">BSE_WF</span><span class="o">=</span><span class="w"> </span>F
+<span class="nv">EXC_WF_I</span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="nv">EXC_WF_F</span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
+<span class="nv">PARAMS_FILE</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;gesnse2_hr.dat&quot;</span>
+<span class="nv">KPATH_FILE</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kpoints.dat&quot;</span>
+<span class="nv">KPATH_BSE</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kpoints-bse.dat&quot;</span>
+<span class="nv">OUTPUT</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;./out2/&quot;</span>
+<span class="nv">CALC_DATA</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;./out2/&quot;</span>
+<span class="nv">COULOMB_POT</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;V2DT&quot;</span>
+<span class="nv">MESH_TYPE</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;RK2D&quot;</span>
+<span class="nv">RK</span><span class="o">=</span><span class="w"> </span><span class="m">120</span>
+<span class="nv">CSHIFT</span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.05
+<span class="nv">ENSPECI</span><span class="o">=</span><span class="w">  </span><span class="m">0</span>.00
+<span class="nv">ENSPECF</span><span class="o">=</span><span class="w">  </span><span class="m">4</span>.00
+<span class="nv">NESPEC</span><span class="o">=</span><span class="w">   </span><span class="m">6001</span>
+<span class="nv">NBANDSC</span><span class="o">=</span><span class="w"> </span><span class="m">4</span>
+<span class="nv">NBANDSV</span><span class="o">=</span><span class="w"> </span><span class="m">3</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All Flags in the input file should be written according to this
+pattern FLAG= Value (no blank spaces between the FLAG string and the ‘=’ symbol).</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The order of the flags is not important.</p>
+</div>
+</section>
+<section id="executable-files">
+<h1>Executable files<a class="headerlink" href="#executable-files" title="Link to this heading"></a></h1>
+<blockquote>
+<div><p>After compiling the code, seven executable files will be generated in the bin folder.
+Each of them has the following functions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>wtb.x</cite>: This is the main executable file. It can be executed using the command: <cite>wtb.x &lt; input.dat</cite>, where <cite>input.dat</cite> is the main input file. Note: This code does not contain an interface with MPI, so do not try to run it using the <cite>mpirun -np</cite> command.</p></li>
+<li><p><cite>wtbf.x</cite>: This file is faster than <cite>wtb.x</cite>, but it consumes more RAM memory during BSE calculations.</p></li>
+<li><p><cite>dirgapf.x</cite>: This post-processing script reads the <cite>band.dat</cite> file and finds both direct and indirect bandgaps. It can be executed using the command: <cite>dirgapf.x nb nocp nk &lt; bands.dat &gt; dirgap.out</cite>, where <cite>nb</cite>, <cite>nocp</cite>, and <cite>nk</cite> are the numbers of wannier projections, occupied states, and <cite>k</cite>-points used to generate the <cite>band.dat</cite> file, respectively.</p></li>
+<li><p><cite>param_gen.x</cite> or <cite>param_gen_vasp.x</cite>: These pre-processing tools are used to read the <cite>wannier90.win</cite> file and its output files, and then generate the MLWF-TB parameters file named <cite>tb_hr.dat</cite>. They should be executed in the folder containing the DFT and Wannier90 outputs. Before running these scripts, the <cite>Wannier90 input.win</cite> file must be renamed to <cite>wannier90.win</cite>.</p></li>
+<li><p><cite>nc_nv_finder.x</cite>: This post-processing tool can be used to estimate the number of conduction and valence states (<cite>NBANDSC</cite> and <cite>NBANDSV</cite>) necessary to provide a reliable dielectric function in the interval of <cite>ENSPECI</cite> to <cite>ENSPECF</cite>. To use this tool, enter the command: <cite>nc_nv_finder.x &lt; input.dat &gt;&gt; input.dat</cite>.</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="wantibexos-flags">
+<h1>WanTiBEXOS Flags<a class="headerlink" href="#wantibexos-flags" title="Link to this heading"></a></h1>
+<p><span class="math notranslate nohighlight">\(\texttt{NTHREADS}\)</span></p>
+<p>Description: Number of threads used to run the code in parallel with OpenMP.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: integer
+<span class="linenos">2</span>Default: NTHREADS= 1
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{SYSDIM}\)</span></p>
+<p>Description: Used to define the dimensions of your system, it’s used to select the correct expression
+to calculate exciton lifetime, showed in section ref{sec:lft}. (It is used to define the dimension of
+your system so that a proper expression of Coulomb interaction is chosen to calculate exciton
+lifetime, see section ref{sec:lft})</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: character(len=2)
+<span class="linenos">2</span>Default: SYSDIM= 3D
+<span class="linenos">3</span>Available values: 3D, 2D, 1D
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{DFT}\)</span></p>
+<p>Description: Uses (Chose) V if obtained the wannierization from VASP package, using the patch for MLWF,
+available in: url{<a class="reference external" href="https://github.com/Chengcheng-Xiao/VASP2WAN90_v2_fix">https://github.com/Chengcheng-Xiao/VASP2WAN90_v2_fix</a>}, or O if another DFT code is
+used (otherwise, for other DFT packages, select “O” ). It’s used to performs (perform) SpinDOS and band
+structure calculations with average values of <span class="math notranslate nohighlight">\(S_z\)</span> operator.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: character(len=1)
+<span class="linenos">2</span>Default: DFT= V
+<span class="linenos">3</span>Available values: V, O
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{TA}\)</span></p>
+<p>Description: Used to define the bandgap correction due to temperature effects.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Type</span><span class="p">:</span> <span class="n">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Default</span><span class="p">:</span> <span class="n">TA</span><span class="o">=</span> <span class="n">FA</span>
+<span class="n">Available</span> <span class="n">values</span><span class="p">:</span> <span class="n">FA</span><span class="p">,</span> <span class="n">BE</span><span class="p">,</span> <span class="n">VE</span>
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{PARAMS_FILE}\)</span></p>
+<p>Description: Localization of the TB parameters file.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Mandatory flag to run the code</p>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{OUTPUT}\)</span></p>
+<p>Description: Folder to put the output files generated by the code.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: character(len=70)
+<span class="linenos">2</span>Default: <span class="nv">`./`</span>
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{CALC_DATA}\)</span></p>
+<p>Description: Folder to put the output log files generated by the code.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: character(len=70)
+<span class="linenos">2</span>Default: <span class="nv">`./`</span>
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{PP_ONLY}\)</span></p>
+<p>Description: If set to T, the code will only perform the post-processing steps.
+If set to F, the code will perform the post-processing steps and the electronic structure calculations.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: PP_ONLY= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{KPATH_FILE}\)</span></p>
+<p>Description: Localization for the file with the <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-path (Directory which contains the file of <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-path)
+used for electronic structure and berry curvature calculations.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: character(len=70)
+<span class="linenos">2</span>Default: KPATH_FILE= non declared file
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{KPATH_BSE}\)</span></p>
+<p>Description: Localization for the file with the <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-path
+(Directory which contains the file of <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-path)</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: character(len=70)
+<span class="linenos">2</span>Default: non declared file
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(ORB_W\)</span></p>
+<p>Description: Localization of the file with the selected orbitals to make projected DOS and
+band structure by using orbital contribution color code.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: character(len=70)
+<span class="linenos">2</span>Default: non declared file
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{BANDS}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{BANDS= T}\)</span> run electronic band structure calculation.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: BANDS= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{DOS}\)</span></p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: DOS= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{BSE}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{BSE= T}\)</span> run BSE calculation. Gives only direct exciton energies and their oscillator
+force for each state, using the selected conduction and valence states. Also calculates oscillator force for
+each direct optical transition, using the selected conduction and valence states.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: BSE= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{BSET}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{BSET= T}\)</span> run BSE calculation with temperature effects. It gives only direct exciton
+energies and their oscillator force for each state, using the selected conduction and valence states. Also
+calculates oscillator force for each direct optical transition, using the selected conduction and valence states.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: BSET= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{BSE_BND}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{BSE_BND= T}\)</span> run BSE excitonic band structure calculation. Gives indirect exciton energies,
+using the selected conduction and valence states.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: BSE_BND= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{BSET_BND}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{BSE_BND= T}\)</span> run BSE excitonic band structure calculation, with temperature effects. It
+gives indirect exciton energies, using the selected conduction and valence states.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: BSET_BND= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{DIEL}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{DIEL= T}\)</span> calculates oscillator force for each direct optical transition,
+using the selected conduction and valence states.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: DIEL= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{OPT_BZ}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{OPT_BZ= T}\)</span> calculates oscillator force per <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-point, using the selected
+conduction and valence states.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: OPT_BZ= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{SPEC}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{SPEC= T}\)</span> calculates dielectric function (real and imaginary parts), absorption coefficient,
+extinction coefficient, refractive index and reflectibility with (texttt{BSE= T} or texttt{BSET= T}) or
+without excitation coefficients (texttt{DIEL= T}).</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: SPEC= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{RNMD}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{RNMD= T}\)</span> makes a renormalization of the imaginary component of dielectric function.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: RNMD= T
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{BERRY_BZ}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{BERRY_BZ= T}\)</span> calculates total Berry curvature (semiconductors only) in the entire Brillouin Zone.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: BERRY_BZ= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{BERRY}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{BERRY= T}\)</span> calculates total Berry curvature (semiconductors only) in
+a selected <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-path given by the <span class="math notranslate nohighlight">\(\texttt{KPATH_FILE}\)</span>.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: BERRY= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{PP_ONLY}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{PP_ONLY= T}\)</span> calculates dielectric function (real and imaginary parts),
+absorption coefficient, extinction coefficient, refractive index, reflectibility and energy loss function with
+(texttt{BSE= T} or texttt{BSET= T}) and/or without excitonic effects (texttt{DIEL= T}), and exciton lifetimes,
+<span class="math notranslate nohighlight">\({If \texttt{BSE= T}\)</span> (<span class="math notranslate nohighlight">\(\texttt{BSET= T}\)</span>) and/or <span class="math notranslate nohighlight">\(\texttt{DIEL= T}\)</span>, was calculated on previous run
+using <span class="math notranslate nohighlight">\(\texttt{SPEC= F}\)</span>}.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: PP_ONLY= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{BSE_WF}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{BSE_WF= T}\)</span> returns excitonic wave function output file, from <span class="math notranslate nohighlight">\(\texttt{BSE= T}\)</span>
+(<span class="math notranslate nohighlight">\(\texttt{BSET= T}\)</span>) and/or <span class="math notranslate nohighlight">\(\texttt{BSE_BND= T}\)</span> (<span class="math notranslate nohighlight">\(\texttt{BSET_BND= T}\)</span>) calculations, from the
+excitonic states defined in the interval <span class="math notranslate nohighlight">\(\texttt{EXC_WF_I}\)</span> to <span class="math notranslate nohighlight">\(\texttt{EXC_WF_F}\)</span> variables.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: BSE_WF= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{TMCOEF}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{TMCOEF= T}\)</span> generates transition matrix elements (oscillator force) for the optical transitions
+for each <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-point, using the selected conduction and valence states.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: TMCOEF= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{DTDIAG}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{DTDIAG= T}\)</span> calculates the xy, xz and yz components of dielectric functions from</p>
+<p><span class="math notranslate nohighlight">\(\texttt{BSE= T}\)</span> (<span class="math notranslate nohighlight">\(\texttt{BSET= T}\)</span>) calculation, if <span class="math notranslate nohighlight">\(\texttt{DTDIAG= F}\)</span> these components are set to 0.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: DTDIAG= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{CPOL}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{CPOL= T}\)</span> calculates the dielectric functions considering the circular polarization,
+<span class="math notranslate nohighlight">\(\sigma_{+}\)</span> and <span class="math notranslate nohighlight">\(\sigma_{-}\)</span> components, from <span class="math notranslate nohighlight">\(\texttt{BSE= T}\)</span> (<span class="math notranslate nohighlight">\(\texttt{BSET= T}\)</span>)
+calculations, if <span class="math notranslate nohighlight">\(\texttt{CPOL= F}\)</span> these components are set to 0.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: CPOL= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{PCE}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{PCE= T}\)</span> calculates the power conversion efficiency for solar cells with the
+corresponding crystal of <span class="math notranslate nohighlight">\(\texttt{PARAMS_FILE}\)</span>. For this calculation it is necessary to calculate first the
+absorption spectrum with or/and without excitonic effects. It’s also necessary to informs the selected solar temperature
+(<span class="math notranslate nohighlight">\(\texttt{CTEMP}\)</span>), maximum cell thickness (<span class="math notranslate nohighlight">\(\texttt{THMAX}\)</span>), fundamental bandgap (<span class="math notranslate nohighlight">\(\texttt{EG}\)</span>),
+direct bandgap (<span class="math notranslate nohighlight">\(\texttt{EGD}\)</span>), direct bandgap (<span class="math notranslate nohighlight">\(\texttt{EGD}\)</span>), exciton ground state
+energy (<span class="math notranslate nohighlight">\(\texttt{EGS}\)</span>) and exciton bright ground state energy (<span class="math notranslate nohighlight">\(\texttt{EBGS}\)</span>).</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: logical
+<span class="linenos">2</span>Default: PCE= F
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{NGX}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{NGX}\)</span> sets the number of grid points in the <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-mesh grid along the first
+reciprocal lattice vector.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: integer
+<span class="linenos">2</span>Default: NGX= 1
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{NGY}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{NGY}\)</span> sets the number of grid points in the <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-mesh grid along the second
+reciprocal lattice vector.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: integer
+<span class="linenos">2</span>Default: NGY= 1
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{NGZ}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{NGZ}\)</span> sets the number of grid points in the <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-mesh grid along the third
+reciprocal lattice vector.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: integer
+<span class="linenos">2</span>Default: NGZ= 1
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{SHIFT_1}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{SHIFT\_1}\)</span> sets the first component of the <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-mesh shift first coordinate, direct units.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: SHIFT_1= 0.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{SHIFT_2}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{SHIFT_2}\)</span> sets the second component of the <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-mesh shift first coordinate, direct units.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: SHIFT_2= 0.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{SHIFT_3}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{SHIFT_3}\)</span> sets the third component of the <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-mesh shift first coordinate, direct units.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: SHIFT_3= 0.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{MESH_TYPE}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{MESH_TYPE= MKH}\)</span> generates a <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-mesh with the input variables <span class="math notranslate nohighlight">\(\texttt{NGX, NGY, NGZ}\)</span>.
+Otherwise, it creates an Automatic <span class="math notranslate nohighlight">\(\textbf{K}\)</span>-mesh for 3D or 2D systems, defining <span class="math notranslate nohighlight">\(\texttt{NGX, NGY, NGZ}\)</span>
+for a certain density of the <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-points, given by the flag <span class="math notranslate nohighlight">\(\texttt{RK}\)</span>.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: character
+<span class="linenos">2</span>Default: MESH_TYPE= MKH
+<span class="linenos">3</span>Available values: MKH, RK3D or RK2D
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{RK}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{RK}\)</span> sets the density of the <span class="math notranslate nohighlight">\(\textbf{k}\)</span>-points for the automatic
+<span class="math notranslate nohighlight">\(\textbf{k}\)</span>-mesh generator.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: RK= 0.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(NEDOS\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{NEDOS}\)</span> sets the number of points used in the electronic energy interval
+in <span class="math notranslate nohighlight">\(\texttt{DOS= T}\)</span> calculation.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: integer
+<span class="linenos">2</span>Default: NEDOS= 6001
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{SIGMA}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{SIGMA}\)</span> sets the Gaussian smearing parameter used in texttt{DOS= T} calculation.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: SIGMA= 0.08
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{NBANDSC}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{NBANDSC}\)</span> sets the number of conduction bands above Fermi level is used for the calculation
+of optical and excitonic properties.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: integer
+<span class="linenos">2</span>Default: NBANDSC= 1
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{NBANDSV}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{NBANDSV}\)</span> sets the number of valence bands below Fermi level is used for the calculation
+of optical and excitonic properties.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: integer
+<span class="linenos">2</span>Default: NBANDSV= 1
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{ENSPECI}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{ENSPECI}\)</span> sets the lower limit of photon energy in the calculation of
+dielectric function and other optical properties.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: ENSPECI= 0.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{ENSPECF}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{ENSPECF}\)</span> Upper limit of photon energy in the calculation of
+dielectric function and other optical properties.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: ENSPECF= 3.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{NESPEC}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{NESPEC}\)</span> Number of points used to calculate the dielectric function and other optical properties.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: integer
+<span class="linenos">2</span>Default: NESPEC= 6001
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{CSHIFT}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{CSHIFT}\)</span> Smearing parameter used to avoid numerical singularities in the
+calculation of dielectric function including both real and imaginary parts.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: CSHIFT= 0.01
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{KTOL}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{KTOL}\)</span> Tolerance factor to avoid numerical singularities in the calculation of the Coulomb Potentials,
+used in <span class="math notranslate nohighlight">\(\texttt{BSE= T}\)</span> and <span class="math notranslate nohighlight">\(\texttt{BSE\_BND= T}\)</span> calculations.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: KTOL= 0.001
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{EXC_WF_I}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{EXC_WF_I}\)</span> First excitonic state to plot exciton wavefunction.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: integer
+<span class="linenos">2</span>Default: EXC_WF_I= 1
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{EXC_WF_F}\)</span></p>
+<p>Description: Last excitonic state to plot exciton wavefunction. The excitonic wavefunctions are plot for the
+excitonic states in the interval <span class="math notranslate nohighlight">\(\texttt{EXC_WF_I}\)</span> to <span class="math notranslate nohighlight">\(\texttt{EXC_WF_F}\)</span>.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: integer
+<span class="linenos">2</span>Default: EXC_WF_F= 2
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{COULOMB_POT}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{COULOMB_POT}\)</span> Selects the Coulomb potential which is used in <span class="math notranslate nohighlight">\(\texttt{BSE= T}\)</span>
+and <span class="math notranslate nohighlight">\(\texttt{BSE\_BND= T}\)</span> calculations.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: character
+<span class="linenos">2</span>Default: COULOMB_POT= V3D
+<span class="linenos">3</span>Available values: V3D, V3DL, V2DK, V2DT, V2DT2, V2DOH, V2DRK, V1DT, V0DT
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{EDIEL}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{EDIEL}\)</span> Variable used to describe the Coulomb potentials.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: EDIEL= 1.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{EDIEL_T}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{EDIEL_T}\)</span> Variable used to describe the Coulomb potentials at finite temperature.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: EDIEL_T= 1.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{EDIEL\_B}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{EDIEL_B}\)</span> Variable used to describe the Coulomb potentials at finite temperature.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: EDIEL_B= 1.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{EDIEL_Z}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{EDIEL_Z}\)</span> Variable used to describe the Coulomb potentials at finite temperature.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: EDIEL_Z= 1.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{W_COUL}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{W_COUL}\)</span> Variable used to describe the Coulomb potentials.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: W_COUL= 0.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{LC}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{LC}\)</span> Variable used to describe the Coulomb potentials.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: LC= 1.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{R_0}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{R_0}\)</span> Variable used to describe the Coulomb potentials.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: R_0= 1.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{ST}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{ST}\)</span> Variable used in the finite temperature BSE.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: ST= 0.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{PHAVG}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{PHAVG}\)</span> Variable used in the finite temperature BSE.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: PHAVG= 0.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{TEMP}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{TEMP}\)</span> Temperature in <span class="math notranslate nohighlight">\(K\)</span> used in the finite temperature BSE.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: TEMP= 0.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{SES}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{SES}\)</span> Selection of the type of solar emission spectrum.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: character
+<span class="linenos">2</span>Default: SES= AM15G
+<span class="linenos">3</span>Available values: AM15G,AM15D,AM0G
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{CTEMP}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{CTEMP}\)</span> Solar cell Temperature in <span class="math notranslate nohighlight">\(K\)</span> used in the PCE
+calculation.</p>
+<p><span class="math notranslate nohighlight">\(\texttt{THMAX}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{THMAX}\)</span> Maximum solar cell thickness in <span class="math notranslate nohighlight">\(m\)</span> for PCE, with SLME method calculation.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: THMAX= 5E-06
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{EG}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{EG}\)</span> Fundamental bandgap in <span class="math notranslate nohighlight">\(eV\)</span> used in the PCE calculation.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: EG= 0.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{EGD}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{EGD}\)</span> Optical bandgap (direct bandgap of allowed optical transition)
+in eV used in the PCE calculation.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: EGD= 0.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{EGS}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{EGS}\)</span> Exciton ground state energy in si{electronvolt} used in the PCE calculation.
+Usually it is the lowest energy value obtained from texttt{BSE_BND= T} or texttt{BSET_BND= T} calculations. If
+the material is of a direct bandgap, this value could also be the lowest energy value of texttt{BSE= T}
+or texttt{BSET= T} simulations.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: EGS= 0.0
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\texttt{EBGS}\)</span></p>
+<p>Description: <span class="math notranslate nohighlight">\(\texttt{EBGS}\)</span> Bright exciton ground state energy in si{electronvolt} used in the PCE calculation.
+It is obtained from the lowest bright exciton energy calculation with the flags texttt{BSE= T} or texttt{BSET= T}.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Type: real
+<span class="linenos">2</span>Default: EBGS= 0.0
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../theoretical_background/formalism.html" class="btn btn-neutral float-right" title="Hamiltonian" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Celso Ricardo C. Rego.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
