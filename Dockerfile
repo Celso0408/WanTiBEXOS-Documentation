@@ -7,8 +7,8 @@ ARG BRANCH
 
 ENV BRANCH=$BRANCH
 
-RUN git clone https://github.com/simstack/Simstack-Documentation.git -b $BRANCH  /simstack
+RUN git clone https://github.com/Celso0408/WanTiBEXOS-Documentation -b $BRANCH  /main
 
-WORKDIR /simstack/docs
+WORKDIR /WanTiBEXOS-Documentation/docs
 
 CMD make html
