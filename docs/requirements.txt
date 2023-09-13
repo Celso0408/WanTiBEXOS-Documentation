@@ -2,3 +2,4 @@ sphinx>=1.4
 ipykernel
 myst-nb
 sphinx_copybutton
+sphinx_rtd_theme
