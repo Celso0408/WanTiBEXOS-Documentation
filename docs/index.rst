@@ -15,6 +15,9 @@ phenomena and more, give **WanTiBEXOS** a try.
 
 .. figure:: assets/wtb-workflow.png
 
+.. important::
+    :download:`Download WanTiBEXOS on Github <https://github.com/ac-dias/wantibexos>`
+
 The basics of WanTiBEXOS consist of the following stages:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
    #. Pre-processing, which involves performing DFT and Wannier90 calculations to generate MLWF-TB parameters.
